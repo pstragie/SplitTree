@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F5DB50DA2093AF6C008AA70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB50D92093AF6C008AA70F /* AppDelegate.swift */; };
+		F5DB50DC2093AF6C008AA70F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB50DB2093AF6C008AA70F /* ViewController.swift */; };
+		F5DB50DF2093AF6C008AA70F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DB50DD2093AF6C008AA70F /* Main.storyboard */; };
+		F5DB50E22093AF6C008AA70F /* SplitTree.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5DB50E02093AF6C008AA70F /* SplitTree.xcdatamodeld */; };
+		F5DB50E42093AF6C008AA70F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DB50E32093AF6C008AA70F /* Assets.xcassets */; };
+		F5DB50E72093AF6C008AA70F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DB50E52093AF6C008AA70F /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F5DB50D62093AF6C008AA70F /* SplitTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5DB50D92093AF6C008AA70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5DB50DB2093AF6C008AA70F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5DB50DE2093AF6C008AA70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5DB50E12093AF6C008AA70F /* SplitTree.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SplitTree.xcdatamodel; sourceTree = "<group>"; };
+		F5DB50E32093AF6C008AA70F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5DB50E62093AF6C008AA70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5DB50E82093AF6C008AA70F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5DB50D32093AF6B008AA70F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5DB50CD2093AF6B008AA70F = {
+			isa = PBXGroup;
+			children = (
+				F5DB50D82093AF6C008AA70F /* SplitTree */,
+				F5DB50D72093AF6C008AA70F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5DB50D72093AF6C008AA70F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5DB50D62093AF6C008AA70F /* SplitTree.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5DB50D82093AF6C008AA70F /* SplitTree */ = {
+			isa = PBXGroup;
+			children = (
+				F5DB50D92093AF6C008AA70F /* AppDelegate.swift */,
+				F5DB50DB2093AF6C008AA70F /* ViewController.swift */,
+				F5DB50DD2093AF6C008AA70F /* Main.storyboard */,
+				F5DB50E32093AF6C008AA70F /* Assets.xcassets */,
+				F5DB50E52093AF6C008AA70F /* LaunchScreen.storyboard */,
+				F5DB50E82093AF6C008AA70F /* Info.plist */,
+				F5DB50E02093AF6C008AA70F /* SplitTree.xcdatamodeld */,
+			);
+			path = SplitTree;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5DB50D52093AF6B008AA70F /* SplitTree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5DB50EB2093AF6C008AA70F /* Build configuration list for PBXNativeTarget "SplitTree" */;
+			buildPhases = (
+				F5DB50D22093AF6B008AA70F /* Sources */,
+				F5DB50D32093AF6B008AA70F /* Frameworks */,
+				F5DB50D42093AF6B008AA70F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SplitTree;
+			productName = SplitTree;
+			productReference = F5DB50D62093AF6C008AA70F /* SplitTree.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5DB50CE2093AF6B008AA70F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "PWS-apps";
+				TargetAttributes = {
+					F5DB50D52093AF6B008AA70F = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HUS279SULR;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F5DB50D12093AF6B008AA70F /* Build configuration list for PBXProject "SplitTree" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5DB50CD2093AF6B008AA70F;
+			productRefGroup = F5DB50D72093AF6C008AA70F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5DB50D52093AF6B008AA70F /* SplitTree */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5DB50D42093AF6B008AA70F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DB50E72093AF6C008AA70F /* LaunchScreen.storyboard in Resources */,
+				F5DB50E42093AF6C008AA70F /* Assets.xcassets in Resources */,
+				F5DB50DF2093AF6C008AA70F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5DB50D22093AF6B008AA70F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DB50DC2093AF6C008AA70F /* ViewController.swift in Sources */,
+				F5DB50DA2093AF6C008AA70F /* AppDelegate.swift in Sources */,
+				F5DB50E22093AF6C008AA70F /* SplitTree.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F5DB50DD2093AF6C008AA70F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DB50DE2093AF6C008AA70F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5DB50E52093AF6C008AA70F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5DB50E62093AF6C008AA70F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5DB50E92093AF6C008AA70F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5DB50EA2093AF6C008AA70F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5DB50EC2093AF6C008AA70F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HUS279SULR;
+				INFOPLIST_FILE = SplitTree/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PWS-apps.SplitTree";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F5DB50ED2093AF6C008AA70F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HUS279SULR;
+				INFOPLIST_FILE = SplitTree/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PWS-apps.SplitTree";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5DB50D12093AF6B008AA70F /* Build configuration list for PBXProject "SplitTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DB50E92093AF6C008AA70F /* Debug */,
+				F5DB50EA2093AF6C008AA70F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5DB50EB2093AF6C008AA70F /* Build configuration list for PBXNativeTarget "SplitTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5DB50EC2093AF6C008AA70F /* Debug */,
+				F5DB50ED2093AF6C008AA70F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F5DB50E02093AF6C008AA70F /* SplitTree.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F5DB50E12093AF6C008AA70F /* SplitTree.xcdatamodel */,
+			);
+			currentVersion = F5DB50E12093AF6C008AA70F /* SplitTree.xcdatamodel */;
+			path = SplitTree.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F5DB50CE2093AF6B008AA70F /* Project object */;
+}
