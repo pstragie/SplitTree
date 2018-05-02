@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5D416612093C4C500A5A32C /* SplitTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */; };
+		F5D41663209A69C900A5A32C /* FullVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41662209A69C900A5A32C /* FullVersion.swift */; };
+		F5D41665209A6A0E00A5A32C /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41664209A6A0E00A5A32C /* IAPHelper.swift */; };
+		F5D41667209A6B2900A5A32C /* ConnectionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41666209A6B2900A5A32C /* ConnectionCheck.swift */; };
 		F5DB50DA2093AF6C008AA70F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB50D92093AF6C008AA70F /* AppDelegate.swift */; };
 		F5DB50DC2093AF6C008AA70F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB50DB2093AF6C008AA70F /* ViewController.swift */; };
 		F5DB50DF2093AF6C008AA70F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DB50DD2093AF6C008AA70F /* Main.storyboard */; };
-		F5DB50E22093AF6C008AA70F /* SplitTree.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5DB50E02093AF6C008AA70F /* SplitTree.xcdatamodeld */; };
 		F5DB50E42093AF6C008AA70F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DB50E32093AF6C008AA70F /* Assets.xcassets */; };
 		F5DB50E72093AF6C008AA70F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DB50E52093AF6C008AA70F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitTreeViewController.swift; sourceTree = "<group>"; };
+		F5D41662209A69C900A5A32C /* FullVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullVersion.swift; sourceTree = "<group>"; };
+		F5D41664209A6A0E00A5A32C /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		F5D41666209A6B2900A5A32C /* ConnectionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCheck.swift; sourceTree = "<group>"; };
 		F5DB50D62093AF6C008AA70F /* SplitTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DB50D92093AF6C008AA70F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5DB50DB2093AF6C008AA70F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5DB50DE2093AF6C008AA70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F5DB50E12093AF6C008AA70F /* SplitTree.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SplitTree.xcdatamodel; sourceTree = "<group>"; };
 		F5DB50E32093AF6C008AA70F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5DB50E62093AF6C008AA70F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5DB50E82093AF6C008AA70F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,11 +64,14 @@
 			children = (
 				F5DB50D92093AF6C008AA70F /* AppDelegate.swift */,
 				F5DB50DB2093AF6C008AA70F /* ViewController.swift */,
+				F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */,
 				F5DB50DD2093AF6C008AA70F /* Main.storyboard */,
+				F5D41662209A69C900A5A32C /* FullVersion.swift */,
+				F5D41664209A6A0E00A5A32C /* IAPHelper.swift */,
+				F5D41666209A6B2900A5A32C /* ConnectionCheck.swift */,
 				F5DB50E32093AF6C008AA70F /* Assets.xcassets */,
 				F5DB50E52093AF6C008AA70F /* LaunchScreen.storyboard */,
 				F5DB50E82093AF6C008AA70F /* Info.plist */,
-				F5DB50E02093AF6C008AA70F /* SplitTree.xcdatamodeld */,
 			);
 			path = SplitTree;
 			sourceTree = "<group>";
@@ -140,9 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D41667209A6B2900A5A32C /* ConnectionCheck.swift in Sources */,
 				F5DB50DC2093AF6C008AA70F /* ViewController.swift in Sources */,
+				F5D41663209A69C900A5A32C /* FullVersion.swift in Sources */,
+				F5D416612093C4C500A5A32C /* SplitTreeViewController.swift in Sources */,
+				F5D41665209A6A0E00A5A32C /* IAPHelper.swift in Sources */,
 				F5DB50DA2093AF6C008AA70F /* AppDelegate.swift in Sources */,
-				F5DB50E22093AF6C008AA70F /* SplitTree.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +281,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HUS279SULR;
 				INFOPLIST_FILE = SplitTree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PWS-apps.SplitTree";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -282,6 +295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HUS279SULR;
 				INFOPLIST_FILE = SplitTree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PWS-apps.SplitTree";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -308,21 +322,9 @@
 				F5DB50ED2093AF6C008AA70F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F5DB50E02093AF6C008AA70F /* SplitTree.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F5DB50E12093AF6C008AA70F /* SplitTree.xcdatamodel */,
-			);
-			currentVersion = F5DB50E12093AF6C008AA70F /* SplitTree.xcdatamodel */;
-			path = SplitTree.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F5DB50CE2093AF6B008AA70F /* Project object */;
 }
