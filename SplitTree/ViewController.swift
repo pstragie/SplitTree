@@ -48,15 +48,12 @@ class ViewController: UIViewController {
     
     @IBAction func resetTapped(_ sender: UIButton) {
         let controller = UIAlertController(title: NSLocalizedString("All progress will be lost!", comment: ""), message: NSLocalizedString("Are you sure you want to reset all trees?", comment: ""), preferredStyle: .alert)
-        let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { alertAction in
-            self.resetData()
-            self.resetTimes() }
+        let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { alertAction in self.resetAll() }
         let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { alertAction in
         }
         controller.addAction(ok)
         controller.addAction(cancel)
         present(controller, animated: true, completion: nil)
-        viewWillLayoutSubviews()
     }
     
     @IBAction func restorePurchaseTapped(_ sender: UIButton) {
@@ -65,6 +62,7 @@ class ViewController: UIViewController {
         restorePurchaseButton.isEnabled = false
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ViewController.enableButton), userInfo: nil, repeats: false)
         SplitTreeFull.store.restorePurchases()
+        setupLayout()
         self.viewWillLayoutSubviews()
     }
     
@@ -130,6 +128,12 @@ class ViewController: UIViewController {
         UIDevice.current.setValue(orientationvalue, forKey: "orientation")
         AppDelegate.AppUtility.lockOrientation(.portrait)
         // Do any additional setup after loading the view, typically from a nib.
+        SplitTreeFull.store.requestProducts{success, products in
+            if success {
+                self.iapProducts = products!
+                self.viewWillLayoutSubviews()
+            }
+        }
         // Setup layout
         setupLayout()
     }
@@ -144,24 +148,7 @@ class ViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         for button in myButtons {
-            
             button.layer.borderWidth = 2
-            let tree = Int(myButtons.index(of: button)!) + 1
-            // Load data
-            
-            let storedDict = localdata.dictionary(forKey: "solvedNumbers")
-            if let solvedForTree = storedDict?[String(tree)] {
-                let solvedArray = solvedForTree as? Array<Int>
-                print("arraycount: \(String(describing: solvedArray?.count)) en tree: \(tree)")
-                if (solvedArray?.count)! - 1 == tree {
-                    button.layer.backgroundColor = UIColor.yellow.cgColor
-                } else if (solvedArray?.count)! >= 1 {
-                    button.layer.borderColor = UIColor.darkGray.cgColor
-                }
-            } else {
-                button.layer.borderColor = UIColor.black.cgColor
-                button.layer.backgroundColor = UIColor.green.cgColor
-            }
         }
         if unlockButton.isHidden == true {
             restorePurchaseButton.isHidden = false
@@ -195,12 +182,18 @@ class ViewController: UIViewController {
             let storedDict = localdata.dictionary(forKey: "solvedNumbers")
             if let solvedForTree = storedDict?[String(tree)] {
                 let solvedArray = solvedForTree as? Array<Int>
-                print("arraycount: \(String(describing: solvedArray?.count)) en tree: \(tree)")
-                if (solvedArray?.count)! - 1 == tree {
+                if (solvedArray?.count)! - 1 >= tree {
                     button.layer.backgroundColor = UIColor.yellow.cgColor
+                    button.layer.borderColor = UIColor.green.cgColor
                 } else if (solvedArray?.count)! >= 1 {
                     button.layer.borderColor = UIColor.darkGray.cgColor
-                } 
+                } else {
+                    button.layer.borderColor = UIColor.black.cgColor
+                    button.layer.backgroundColor = UIColor.green.cgColor
+                }
+            } else {
+                button.layer.borderColor = UIColor.black.cgColor
+                button.layer.backgroundColor = UIColor.green.cgColor
             }
         }
         
@@ -279,16 +272,14 @@ class ViewController: UIViewController {
     @IBAction func unwindToOverview(segue: UIStoryboardSegue) {
         if let sourceViewController = segue.source as? SplitTreeViewController {
             if sourceViewController.score >= 0 {
-                // store solved numbers for practiced tree in localdata
-                storeData(tree: sourceViewController.treeSelection!, solved: sourceViewController.solvedNumbers)
-                print("solved Numbers: \(sourceViewController.solvedNumbers)")
+                
                 // check if all numbers have been solved for a tree
                 let storedDict = localdata.dictionary(forKey: "solvedNumbers")
                 if let solvedForTree = storedDict?[String(sourceViewController.treeSelection!)] {
                     let solvedArray = solvedForTree as? Array<Int>
-                    print("solvedArray in localdata: \(String(describing: solvedArray!))")
                     if solvedArray?.count == (sourceViewController.treeSelection! + 1) {
                         myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.green.cgColor
+                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = UIColor.yellow.cgColor
                     } else {
                         myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.yellow.cgColor
                     }
@@ -299,37 +290,11 @@ class ViewController: UIViewController {
         }
     }
 
-    // MARK: - Store data to userDefaults
-    func storeData(tree: Int, solved: Array<Int>) {
-        var solvedDict: Dictionary<String, Any> = [:]
-        var newArray: Array<Int> = []
-        
-        // Check if Userdefaults exist
-        if localdata.object(forKey: "solvedNumbers") != nil {
-            print("solved numbers exist in localdata")
-            solvedDict = localdata.dictionary(forKey: "solvedNumbers")!
-            if var exArray = solvedDict[String(tree)] as? Array<Int> {
-                for n in solved {
-                    if !exArray.contains(n) {
-                        exArray.append(n)
-                    }
-                }
-                print("exArray: \(exArray)")
-                newArray = exArray
-            } else {
-                newArray = solved
-            }
-        } else {
-            print("solved numbers does not exist in localdata")
-            solvedDict = [:] as Dictionary<String, Any>
-            for n in solved {
-                newArray.append(n)
-            }
-            
-        }
-        print("newArray: \(newArray)")
-        solvedDict[String(tree)] = newArray
-        localdata.set(solvedDict, forKey: "solvedNumbers")
+    func resetAll() {
+        resetData()
+        resetTimes()
+        setupLayout()
+        viewWillLayoutSubviews()
     }
     
     func resetData() {

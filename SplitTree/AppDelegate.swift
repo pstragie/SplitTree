@@ -17,9 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let localdata = UserDefaults.standard
-        let solvedNumbers = localdata.object(forKey: "solvedNumbers")
-        print("solvedNumbers at startup: \(String(describing: solvedNumbers))")
         return true
     }
 

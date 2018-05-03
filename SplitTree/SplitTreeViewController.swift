@@ -8,20 +8,24 @@
 
 import UIKit
 
-class SplitTreeViewController: UIViewController {
+class SplitTreeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - variables
     var treeSelection: Int?
     var finished: Bool = false
     var numberArray: Array<Int> = [0]
-    var practicedNumbers: Array<Int> = []
     var solvedNumbers: Array<Int> = []
     var score: Int = 0
     var timer = Timer()
     var seconds: Int = 0
     var honderdsten: Double = 0
     var localdata = UserDefaults.standard
+    let treeArray: Array<Int> = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     
+    // MARK: - outlets
+    @IBOutlet var myLabels: [UILabel]!
+    @IBOutlet var myTextFields: [UITextField]!
+    @IBOutlet var myButtons: [UIButton]!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var treeLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
@@ -39,6 +43,26 @@ class SplitTreeViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var TimeStaticLabel: UILabel!
     @IBOutlet weak var newRecordLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var randomButton: UIButton!
+    
+    // MARK: - Actions
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        self.treeSelection = treeSelection! + 1
+        setupLayout()
+        for textField in myTextFields {
+            textField.text = ""
+        }
+    }
+    
+    @IBAction func randomButtonTapped(_ sender: UIButton) {
+        let shuffledTreeArray = shuffleArray(array: treeArray)
+        self.treeSelection = shuffledTreeArray[0]
+        setupLayout()
+        for textField in myTextFields {
+            textField.text = ""
+        }
+    }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         checkTime()
@@ -50,10 +74,22 @@ class SplitTreeViewController: UIViewController {
         right5.isEnabled = false
         doneButton.isHidden = true
         continueButton.isHidden = false
+        randomButton.isHidden = false
+        if self.treeSelection != 20 {
+            nextButton.isHidden = false
+        } else {
+            nextButton.isHidden = true
+        }
+        // store solved numbers for practiced tree in localdata
+        storeData(tree: self.treeSelection!, solved: self.solvedNumbers)
+        self.solvedNumbers = []
     }
 
     @IBAction func continueButtonTapped(_ sender: UIButton) {
-        
+        setupLayout()
+        for textField in myTextFields {
+            textField.text = ""
+        }
     }
     
     
@@ -63,56 +99,58 @@ class SplitTreeViewController: UIViewController {
         let orientationvalue = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(orientationvalue, forKey: "orientation")
         AppDelegate.AppUtility.lockOrientation(.portrait)
-        if treeSelection! == 1 {
-            var randomList: Array<Int> = []
-            for n in 4...20 {
-                randomList.append(n)
-            }
-            let shuffledRandom = shuffleArray(array: randomList)
+        if self.treeSelection! == 1 {
+            let shuffledRandom = shuffleArray(array: self.treeArray)
             self.treeSelection = shuffledRandom[0]
         }
-        print("tree Selection = \(self.treeSelection!)")
+        self.right1.delegate = self
+        self.left2.delegate = self
+        self.right3.delegate = self
+        self.left4.delegate = self
+        self.right5.delegate = self
         setupLayout()
-        DispatchQueue.main.async {
-            self.runTimer()
-        }
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        self.timer.invalidate()
     }
-    
 
     // MARK: - functions
     // MARK: setup layout
     func setupLayout() {
-        doneButton.layer.borderWidth = 2
-        doneButton.layer.cornerRadius = 10
-        continueButton.layer.borderWidth = 2
-        continueButton.layer.cornerRadius = 10
-        backButton.layer.borderWidth = 2
-        backButton.layer.cornerRadius = 10
+        self.numberArray = [0]
+        for button in myButtons {
+            button.layer.borderWidth = 2
+            button.layer.cornerRadius = 10
+        }
+        right1.isEnabled = true
+        left2.isEnabled = true
+        right3.isEnabled = true
+        left4.isEnabled = true
+        right5.isEnabled = true
+        randomButton.isHidden = true
+        nextButton.isHidden = true
         TimeStaticLabel.isHidden = true
         timeLabel.isHidden = true
         newRecordLabel.isHidden = true
         treeLabel.text = String(describing: treeSelection!)
         continueButton.isHidden = true
         doneButton.isHidden = false
+        for label in myLabels {
+            label.layer.borderWidth = 1
+            label.layer.borderColor = UIColor.black.cgColor
+            label.layer.cornerRadius = 5
+        }
+        for textField in myTextFields {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.black.cgColor
+            textField.layer.cornerRadius = 5
+        }
         prepareNumbers()
         right1.becomeFirstResponder()
-        if treeSelection! == 2 {
-            left3.isHidden = true
-            right3.isHidden = true
-            left4.isHidden = true
-            right4.isHidden = true
-            left5.isHidden = true
-            right5.isHidden = true
-        } else if treeSelection! == 3 {
-            left3.isHidden = false
-            right3.isHidden = false
+        if self.treeSelection! == 2 || self.treeSelection! == 3 {
             left4.isHidden = true
             right4.isHidden = true
             left5.isHidden = true
@@ -129,41 +167,32 @@ class SplitTreeViewController: UIViewController {
             left5.isHidden = false
             right5.isHidden = false
         }
+        DispatchQueue.main.async {
+            self.runTimer()
+        }
     }
     
     // MARK: prepare numbers
     func prepareNumbers() {
         // fill number array
-        for x in 1...treeSelection! {
+        for x in 1...self.treeSelection! {
             numberArray.append(x)
         }
-        print("number Array = \(numberArray)")
-        
         // shuffle number array
         let shuffledArray = shuffleArray(array: numberArray)
-        print("shuffled Array = \(shuffledArray)")
         
         // fill labels with numbers
-        if treeSelection! == 2 {
-            left1.text = String(describing: shuffledArray[0])
-            right2.text = String(describing: shuffledArray[1])
-            practicedNumbers.append(contentsOf: shuffledArray[0...1])
-        } else if treeSelection! == 3 {
+        if treeSelection! == 2 || treeSelection! == 3 {
             left1.text = String(describing: shuffledArray[0])
             right2.text = String(describing: shuffledArray[1])
             left3.text = String(describing: shuffledArray[2])
-            practicedNumbers.append(contentsOf: shuffledArray[0...2])
         } else {
             left1.text = String(describing: shuffledArray[0])
             right2.text = String(describing: shuffledArray[1])
             left3.text = String(describing: shuffledArray[2])
             right4.text = String(describing: shuffledArray[3])
             left5.text = String(describing: shuffledArray[4])
-            practicedNumbers.append(contentsOf: shuffledArray[0...4])
         }
-        
-        
-        print("practiced numbers = \(practicedNumbers)")
     }
 
     // MARK: shuffle Array
@@ -182,63 +211,40 @@ class SplitTreeViewController: UIViewController {
     func checkAnswers() {
         let antwoord1 = right1.text?.trimmingCharacters(in: .whitespaces)
         let antwoord2 = left2.text?.trimmingCharacters(in: .whitespaces)
-        if treeSelection! == 2 {
+        let antwoord3 = right3.text?.trimmingCharacters(in: .whitespaces)
+        if treeSelection! == 2 || treeSelection! == 3 {
             if antwoord1! != "" {
                 if Int(left1.text!)! + Int(antwoord1!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(left1.text!)!)
-                    right1.layer.backgroundColor = UIColor.green.cgColor
+                    right1.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    right1.layer.backgroundColor = UIColor.red.cgColor
+                    right1.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                right1.layer.backgroundColor = UIColor.red.cgColor
+                right1.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
             if antwoord2! != "" {
                 if Int(antwoord2!)! + Int(right2.text!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(right2.text!)!)
-                    left2.layer.backgroundColor = UIColor.green.cgColor
+                    left2.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    left2.layer.backgroundColor = UIColor.red.cgColor
+                    left2.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                left2.layer.backgroundColor = UIColor.red.cgColor
-            }
-        } else if treeSelection! == 3 {
-            let antwoord3 = right3.text?.trimmingCharacters(in: .whitespaces)
-            if antwoord1! != "" {
-                if Int(left1.text!)! + Int(antwoord1!)! == treeSelection! {
-                    score += 1
-                    solvedNumbers.append(Int(left1.text!)!)
-                    right1.layer.backgroundColor = UIColor.green.cgColor
-                } else {
-                    right1.layer.backgroundColor = UIColor.red.cgColor
-                }
-            } else {
-                right1.layer.backgroundColor = UIColor.red.cgColor
-            }
-            if antwoord2! != "" {
-                if Int(antwoord2!)! + Int(right2.text!)! == treeSelection! {
-                    score += 1
-                    solvedNumbers.append(Int(right2.text!)!)
-                    left2.layer.backgroundColor = UIColor.green.cgColor
-                } else {
-                    left2.layer.backgroundColor = UIColor.red.cgColor
-                }
-            } else {
-                left2.layer.backgroundColor = UIColor.red.cgColor
+                left2.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
             if antwoord3! != "" {
                 if Int(left3.text!)! + Int(antwoord3!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(left3.text!)!)
-                    right3.layer.backgroundColor = UIColor.green.cgColor
+                    right3.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    right3.layer.backgroundColor = UIColor.red.cgColor
+                    right3.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                right3.layer.backgroundColor = UIColor.red.cgColor
+                right3.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
         } else if treeSelection! >= 4 {
             let antwoord3 = right3.text?.trimmingCharacters(in: .whitespaces)
@@ -248,56 +254,56 @@ class SplitTreeViewController: UIViewController {
                 if Int(left1.text!)! + Int(antwoord1!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(left1.text!)!)
-                    right1.layer.backgroundColor = UIColor.green.cgColor
+                    right1.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    right1.layer.backgroundColor = UIColor.red.cgColor
+                    right1.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                right1.layer.backgroundColor = UIColor.red.cgColor
+                right1.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
             if antwoord2! != "" {
                 if Int(antwoord2!)! + Int(right2.text!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(right2.text!)!)
-                    left2.layer.backgroundColor = UIColor.green.cgColor
+                    left2.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    left2.layer.backgroundColor = UIColor.red.cgColor
+                    left2.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                left2.layer.backgroundColor = UIColor.red.cgColor
+                left2.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
             if antwoord3! != "" {
                 if Int(left3.text!)! + Int(antwoord3!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(left3.text!)!)
-                    right3.layer.backgroundColor = UIColor.green.cgColor
+                    right3.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    right3.layer.backgroundColor = UIColor.red.cgColor
+                    right3.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                right3.layer.backgroundColor = UIColor.red.cgColor
+                right3.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
             if antwoord4! != "" {
                 if Int(antwoord4!)! + Int(right4.text!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(right4.text!)!)
-                    left4.layer.backgroundColor = UIColor.green.cgColor
+                    left4.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    left4.layer.backgroundColor = UIColor.red.cgColor
+                    left4.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                left4.layer.backgroundColor = UIColor.red.cgColor
+                left4.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
             if antwoord5! != "" {
                 if Int(left5.text!)! + Int(antwoord5!)! == treeSelection! {
                     score += 1
                     solvedNumbers.append(Int(left5.text!)!)
-                    right5.layer.backgroundColor = UIColor.green.cgColor
+                    right5.backgroundColor = UIColor.FlatColor.Green.Fern
                 } else {
-                    right5.layer.backgroundColor = UIColor.red.cgColor
+                    right5.backgroundColor = UIColor.FlatColor.Red.TerraCotta
                 }
             } else {
-                right5.layer.backgroundColor = UIColor.red.cgColor
+                right5.backgroundColor = UIColor.FlatColor.Red.TerraCotta
             }
         }
     }
@@ -340,20 +346,19 @@ class SplitTreeViewController: UIViewController {
     }
     
     func updateTimer() {
-        honderdsten += 1     //This will decrement(count down)the seconds.
+        honderdsten += 1     
     }
 
     func checkTime() {
         timer.invalidate()
-        print("timer: \(honderdsten)")
         TimeStaticLabel.isHidden = false
         timeLabel.isHidden = false
         timeLabel.text = "\((honderdsten).rounded() / 100) sec"
         storeTime(tree: treeSelection!, newTime: Float(honderdsten))
-        
+        self.honderdsten = 0.0
     }
     
-    // MARK: - Store data to userDefaults
+    // MARK: - Store time to userDefaults
     func storeTime(tree: Int, newTime: Float) {
         var timeKeeper: Dictionary<String, Any> = [:]
         var exTime: Float = 10000.00
@@ -362,7 +367,6 @@ class SplitTreeViewController: UIViewController {
         if localdata.object(forKey: "timeKeeper") != nil {
             timeKeeper = localdata.dictionary(forKey: "timeKeeper")!
             if let existTime = timeKeeper[String(tree)] as? Float {
-                print("stored time: \(existTime)")
                 exTime = existTime
             }
         } else {
@@ -373,5 +377,34 @@ class SplitTreeViewController: UIViewController {
             self.newRecordLabel.isHidden = false
         }
         localdata.set(timeKeeper, forKey: "timeKeeper")
+    }
+    
+    // MARK: - Store data to userDefaults
+    func storeData(tree: Int, solved: Array<Int>) {
+        var solvedDict: Dictionary<String, Any> = [:]
+        var newArray: Array<Int> = []
+        
+        // Check if Userdefaults exist
+        if localdata.object(forKey: "solvedNumbers") != nil {
+            solvedDict = localdata.dictionary(forKey: "solvedNumbers")!
+            if var exArray = solvedDict[String(tree)] as? Array<Int> {
+                for n in solved {
+                    if !exArray.contains(n) {
+                        exArray.append(n)
+                    }
+                }
+                newArray = exArray
+            } else {
+                newArray = solved
+            }
+        } else {
+            solvedDict = [:] as Dictionary<String, Any>
+            for n in solved {
+                newArray.append(n)
+            }
+            
+        }
+        solvedDict[String(tree)] = newArray
+        localdata.set(solvedDict, forKey: "solvedNumbers")
     }
 }

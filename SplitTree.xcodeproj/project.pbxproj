@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F58780B5209B3E4B0044157B /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58780B4209B3E4B0044157B /* UIColor+Hex.swift */; };
+		F58780B7209B3EED0044157B /* UIColor+FlatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */; };
 		F5D416612093C4C500A5A32C /* SplitTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */; };
 		F5D41663209A69C900A5A32C /* FullVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41662209A69C900A5A32C /* FullVersion.swift */; };
 		F5D41665209A6A0E00A5A32C /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41664209A6A0E00A5A32C /* IAPHelper.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F58780B4209B3E4B0044157B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
 		F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitTreeViewController.swift; sourceTree = "<group>"; };
 		F5D41662209A69C900A5A32C /* FullVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullVersion.swift; sourceTree = "<group>"; };
 		F5D41664209A6A0E00A5A32C /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				F5D41662209A69C900A5A32C /* FullVersion.swift */,
 				F5D41664209A6A0E00A5A32C /* IAPHelper.swift */,
 				F5D41666209A6B2900A5A32C /* ConnectionCheck.swift */,
+				F58780B4209B3E4B0044157B /* UIColor+Hex.swift */,
+				F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */,
 				F5DB50E32093AF6C008AA70F /* Assets.xcassets */,
 				F5DB50E52093AF6C008AA70F /* LaunchScreen.storyboard */,
 				F5DB50E82093AF6C008AA70F /* Info.plist */,
@@ -149,9 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58780B5209B3E4B0044157B /* UIColor+Hex.swift in Sources */,
 				F5D41667209A6B2900A5A32C /* ConnectionCheck.swift in Sources */,
 				F5DB50DC2093AF6C008AA70F /* ViewController.swift in Sources */,
 				F5D41663209A69C900A5A32C /* FullVersion.swift in Sources */,
+				F58780B7209B3EED0044157B /* UIColor+FlatColors.swift in Sources */,
 				F5D416612093C4C500A5A32C /* SplitTreeViewController.swift in Sources */,
 				F5D41665209A6A0E00A5A32C /* IAPHelper.swift in Sources */,
 				F5DB50DA2093AF6C008AA70F /* AppDelegate.swift in Sources */,
