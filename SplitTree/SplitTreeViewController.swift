@@ -77,11 +77,9 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         checkTime()
         checkAnswers()
-        right1.isEnabled = false
-        left2.isEnabled = false
-        right3.isEnabled = false
-        left4.isEnabled = false
-        right5.isEnabled = false
+        for textField in myTextFields {
+            textField.isEnabled = false
+        }
         doneButton.isHidden = true
         continueButton.isHidden = false
         randomButton.isHidden = false
@@ -176,11 +174,13 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             button.layer.borderWidth = 2
             button.layer.cornerRadius = 10
         }
-        right1.isEnabled = true
-        left2.isEnabled = true
-        right3.isEnabled = true
-        left4.isEnabled = true
-        right5.isEnabled = true
+        for textField in myTextFields {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.black.cgColor
+            textField.layer.cornerRadius = 5
+            textField.isEnabled = true
+            textField.isUserInteractionEnabled = true
+        }
         randomButton.isHidden = true
         nextButton.isHidden = true
         TimeStaticLabel.isHidden = true
@@ -194,11 +194,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             label.layer.borderColor = UIColor.black.cgColor
             label.layer.cornerRadius = 5
         }
-        for textField in myTextFields {
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.black.cgColor
-            textField.layer.cornerRadius = 5
-        }
+        
         prepareNumbers()
         right1.becomeFirstResponder()
         if self.treeSelection! == 2 || self.treeSelection! == 3 {
@@ -258,7 +254,8 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         }
         return tempShuffled
     }
-
+    
+    
     // MARK: check answers
     func checkAnswers() {
         let antwoord1 = right1.text?.trimmingCharacters(in: .whitespaces)
@@ -360,30 +357,40 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - keyboard return function
+    // MARK: - Textfield Delegate
+    // MARK: textfield becomes active
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("textFieldShouldBeginEditing")
+        return true
+    }
+    // MARK: keyboard return function
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn")
         // go to next inputfield
-        if right1.isFirstResponder {
+        switch textField {
+        case right1:
             left2.becomeFirstResponder()
-        } else if left2.isFirstResponder {
+        case left2:
             right3.becomeFirstResponder()
-        } else if right3.isFirstResponder && left4.isHidden == false {
+        case right3:
             left4.becomeFirstResponder()
-        } else if left4.isFirstResponder && right5.isHidden == false {
+        case left4:
             right5.becomeFirstResponder()
-        } else if right5.isFirstResponder {
-            doneButtonTapped(doneButton)
+        default:
+            right5.resignFirstResponder()
         }
+        
         return true
     }
     
+    // MARK: allowed characters
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
         let allowedCharacters = CharacterSet.decimalDigits
         let characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)
     }
-    
+ 
     // MARK: - Timer
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1/100, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
