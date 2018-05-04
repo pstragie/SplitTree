@@ -21,10 +21,11 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     var honderdsten: Double = 0
     var localdata = UserDefaults.standard
     let treeArray: Array<Int> = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-    let redApplesList: Array<Any> = [#imageLiteral(resourceName: "RedApples1"), #imageLiteral(resourceName: "RedApples2"), #imageLiteral(resourceName: "RedApples3"), #imageLiteral(resourceName: "RedApples4"), #imageLiteral(resourceName: "RedApples5")]
-    let greenApplesList: Array<Any> = [#imageLiteral(resourceName: "GreenApples1"), #imageLiteral(resourceName: "GreenApples2"), #imageLiteral(resourceName: "GreenApples3"), #imageLiteral(resourceName: "GreenApples4"), #imageLiteral(resourceName: "GreenApples5")]
     var redNumber: Int = 0
     var greenNumber: Int = 0
+    let treeImageList2: Array<Any> = [#imageLiteral(resourceName: "palmtwins0+2"), #imageLiteral(resourceName: "palmtwins1+1"), #imageLiteral(resourceName: "palmtwins2+0")]
+    let treeImageList3: Array<Any> = [#imageLiteral(resourceName: "palmtwins0+3"), #imageLiteral(resourceName: "palmtwins1+2"), #imageLiteral(resourceName: "palmtwins2+1"), #imageLiteral(resourceName: "palmtwins3+0")]
+    let treeImageList4: Array<Any> = [#imageLiteral(resourceName: "palmtwins0+4"), #imageLiteral(resourceName: "palmtwins1+3"), #imageLiteral(resourceName: "palmtwins2+2"), #imageLiteral(resourceName: "palmtwins3+1"), #imageLiteral(resourceName: "palmtwins4+0")]
     
     // MARK: - outlets
     @IBOutlet var myLabels: [UILabel]!
@@ -49,8 +50,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newRecordLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var randomButton: UIButton!
-    @IBOutlet weak var imageApplesLeft: UIImageView!
-    @IBOutlet weak var imageApplesRight: UIImageView!
+    @IBOutlet weak var bgImage: UIImageView!
     
     // MARK: - Actions
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -75,8 +75,8 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        checkTime()
         checkAnswers()
+        checkTime()
         for textField in myTextFields {
             textField.isEnabled = false
         }
@@ -113,53 +113,52 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             let shuffledRandom = shuffleArray(array: self.treeArray)
             self.treeSelection = shuffledRandom[0]
         }
+        
         self.right1.delegate = self
         self.left2.delegate = self
         self.right3.delegate = self
         self.left4.delegate = self
         self.right5.delegate = self
+ 
         setupLayout()
     }
 
     override func viewWillLayoutSubviews() {
         // show images of apples
-        if self.treeSelection! <= 5 {
+        if self.treeSelection! <= 3 {
             if right1.isFirstResponder {
-                redNumber = Int(left1.text!)! - 1
-                greenNumber = Int(treeSelection! - Int(left1.text!)! - 1)
+                redNumber = Int(left1.text!)!
             } else if right3.isFirstResponder {
-                redNumber = Int(left3.text!)! - 1
-                greenNumber = Int(treeSelection! - Int(left3.text!)! - 1)
-            } else if right5.isFirstResponder {
-                redNumber = Int(left5.text!)! - 1
-                greenNumber = Int(treeSelection! - Int(left5.text!)! - 1)
+                redNumber = Int(left3.text!)!
             } else if left2.isFirstResponder {
-                greenNumber = Int(right2.text!)! - 1
-                redNumber = Int(treeSelection! - Int(right2.text!)! - 1)
+                redNumber = Int(treeSelection! - Int(right2.text!)!)
+            }
+            if treeSelection! == 2 {
+                bgImage.image = treeImageList2[redNumber] as? UIImage
+            } else if treeSelection! == 3 {
+                bgImage.image = treeImageList3[redNumber] as? UIImage
+            }
+        } else if self.treeSelection! == 4 {
+            if right1.isFirstResponder {
+                redNumber = Int(left1.text!)!
+            } else if right3.isFirstResponder {
+                redNumber = Int(left3.text!)!
+            } else if left2.isFirstResponder {
+                redNumber = Int(treeSelection! - Int(right2.text!)!)
+            } else if right5.isFirstResponder {
+                redNumber = Int(left5.text!)!
             } else if left4.isFirstResponder {
-                greenNumber = Int(right4.text!)! - 1
-                redNumber = Int(treeSelection! - Int(right4.text!)! - 1)
+                redNumber = Int(treeSelection! - Int(right4.text!)!)
             }
-            if redNumber >= 0 {
-                //let leftImage: UIImage = UIImage(named: redApplesList[redNumber] as! String)!
-                imageApplesLeft.isHidden = false
-                imageApplesLeft.image = redApplesList[redNumber] as? UIImage
-            } else {
-                imageApplesLeft.isHidden = true
-            }
-            if greenNumber >= 0 {
-                //let rightImage: UIImage = UIImage(named: greenApplesList[greenNumber] as! String)!
-                imageApplesRight.isHidden = false
-                imageApplesRight.image = greenApplesList[greenNumber] as? UIImage
-            } else {
-                imageApplesRight.isHidden = true
+            if treeSelection! == 4 {
+                bgImage.image = treeImageList4[redNumber] as? UIImage
             }
         } else {
-            imageApplesLeft.isHidden = true
-            imageApplesRight.isHidden = true
+            bgImage.image = #imageLiteral(resourceName: "palmtwins0+0")
         }
-
     }
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -169,6 +168,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     // MARK: - functions
     // MARK: setup layout
     func setupLayout() {
+        self.score = 0
         self.numberArray = [0]
         for button in myButtons {
             button.layer.borderWidth = 2
@@ -180,6 +180,15 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             textField.layer.cornerRadius = 5
             textField.isEnabled = true
             textField.isUserInteractionEnabled = true
+        }
+        if SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
+            randomButton.isUserInteractionEnabled = true
+            nextButton.isUserInteractionEnabled = true
+        } else {
+            randomButton.isUserInteractionEnabled = false
+            nextButton.isUserInteractionEnabled = false
+            randomButton.setImage(#imageLiteral(resourceName: "Black_Lock"), for: .normal)
+            nextButton.setImage(#imageLiteral(resourceName: "Black_Lock"), for: .normal)
         }
         randomButton.isHidden = true
         nextButton.isHidden = true
@@ -360,26 +369,38 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Textfield Delegate
     // MARK: textfield becomes active
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("textFieldShouldBeginEditing")
+        textField.isUserInteractionEnabled = true
+        textField.isEnabled = true
         return true
     }
     // MARK: keyboard return function
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn")
         // go to next inputfield
-        switch textField {
-        case right1:
-            left2.becomeFirstResponder()
-        case left2:
-            right3.becomeFirstResponder()
-        case right3:
-            left4.becomeFirstResponder()
-        case left4:
-            right5.becomeFirstResponder()
-        default:
-            right5.resignFirstResponder()
+        if self.treeSelection! >= 4 {
+            switch textField {
+            case right1:
+                left2.becomeFirstResponder()
+            case left2:
+                right3.becomeFirstResponder()
+            case right3:
+                left4.becomeFirstResponder()
+            case left4:
+                right5.becomeFirstResponder()
+            default:
+                right5.resignFirstResponder()
+                doneButtonTapped(doneButton)
+            }
+        } else {
+            switch textField {
+            case right1:
+                left2.becomeFirstResponder()
+            case left2:
+                right3.becomeFirstResponder()
+            default:
+                right3.resignFirstResponder()
+                doneButtonTapped(doneButton)
+            }
         }
-        
         return true
     }
     
@@ -398,16 +419,32 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateTimer() {
-        honderdsten += 1     
+        honderdsten += 1
+        if honderdsten > 100000.0 {
+            self.invalidateTimer()
+        }
     }
 
     func checkTime() {
         timer.invalidate()
+        if treeSelection! == 2 || treeSelection! == 3 {
+            if score == 3 {
+                showTime()
+            }
+        } else {
+            if score == 5 {
+                showTime()
+            }
+        }
+        // reset timer
+        self.honderdsten = 0.0
+    }
+    
+    func showTime() {
         TimeStaticLabel.isHidden = false
         timeLabel.isHidden = false
         timeLabel.text = "\((honderdsten).rounded() / 100) sec"
         storeTime(tree: treeSelection!, newTime: Float(honderdsten))
-        self.honderdsten = 0.0
     }
     
     // MARK: - Store time to userDefaults
@@ -458,5 +495,9 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         }
         solvedDict[String(tree)] = newArray
         localdata.set(solvedDict, forKey: "solvedNumbers")
+    }
+    
+    func invalidateTimer() {
+        self.timer.invalidate()
     }
 }

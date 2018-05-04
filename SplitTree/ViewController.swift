@@ -45,7 +45,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var button20: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
-    
+    @IBOutlet var lockedButtons: [UIButton]!
+
     @IBAction func resetTapped(_ sender: UIButton) {
         let controller = UIAlertController(title: NSLocalizedString("All progress will be lost!", comment: ""), message: NSLocalizedString("Are you sure you want to reset all trees?", comment: ""), preferredStyle: .alert)
         let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { alertAction in self.resetAll() }
@@ -166,8 +167,17 @@ class ViewController: UIViewController {
     func setupLayout() {
         if SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
             unlockButton.isHidden = true
+            for lockedButton in lockedButtons {
+                lockedButton.isEnabled = true
+            }
         } else {
             unlockButton.isHidden = false
+            for lockedButton in lockedButtons {
+                lockedButton.isEnabled = false
+                lockedButton.setBackgroundImage(#imageLiteral(resourceName: "Black_Lock").withAlignmentRectInsets(UIEdgeInsetsMake(5, 5, 5, 5)), for: .normal)
+            }
+            
+            
         }
         resetButton.layer.borderWidth = 2
         resetButton.layer.cornerRadius = 10
