@@ -90,7 +90,7 @@ class ViewController: UIViewController {
                     let failController = UIAlertController(title: NSLocalizedString("In-app purchases not enabled", comment: ""), message: NSLocalizedString("Please enable in-app purchase in settings", comment: ""), preferredStyle: .alert)
                     let ok = UIAlertAction(title: "OK", style: .default) { alertAction in
                     }
-                    let settings = UIAlertAction(title: "Settings", style: .default, handler: { alertAction in
+                    let settings = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default, handler: { alertAction in
                         failController.dismiss(animated: true, completion: nil)
                         let url: URL? = URL(string: UIApplicationOpenSettingsURLString)
                         //let url: NSURL? = NSURL(string: UIApplicationOpenSettingsURLString)
@@ -441,7 +441,7 @@ class ViewController: UIViewController {
         
         // MARK: Cancel button!
         let buttonCancel = UIButton()
-        buttonCancel.setTitle("Cancel", for: .normal)
+        buttonCancel.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
         buttonCancel.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         buttonCancel.setTitleColor(.blue, for: .normal)
         buttonCancel.setTitleColor(.red, for: .highlighted)

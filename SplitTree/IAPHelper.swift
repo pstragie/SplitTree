@@ -51,7 +51,7 @@ extension IAPHelper {
     }
     
     public func buyProduct(_ product: SKProduct) {
-        print("Buying \(product.productIdentifier)...")
+        //print("Buying \(product.productIdentifier)...")
         let payment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
     }
@@ -206,7 +206,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
     private func restore(transaction: SKPaymentTransaction) {
         guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
         
-        print("restore... \(productIdentifier)")
+        //print("restore... \(productIdentifier)")
         deliverPurchaseNotificationFor(identifier: productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
         if let otherViewController = UIApplication.shared.delegate?.window??.rootViewController as? ViewController {
@@ -222,7 +222,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
         if let transactionError = transaction.error as NSError? {
             if transactionError.code != SKError.paymentCancelled.rawValue {
                 ErrorReporting.showMessage(title: NSLocalizedString("Purchase failed", comment: ""), msg: "\(String(describing: (transaction.error?.localizedDescription)!))")
-                print("Transaction Error: \(String(describing: transaction.error?.localizedDescription))")
+                //print("Transaction Error: \(String(describing: transaction.error?.localizedDescription))")
             }
         }
         SKPaymentQueue.default().finishTransaction(transaction)

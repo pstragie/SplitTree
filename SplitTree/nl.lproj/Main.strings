@@ -1,0 +1,117 @@
+
+/* Class = "UIButton"; normalTitle = "5"; ObjectID = "4a0-CY-2J3"; */
+"4a0-CY-2J3.normalTitle" = "5";
+
+/* Class = "UIButton"; normalTitle = "20"; ObjectID = "58S-S4-HRH"; */
+"58S-S4-HRH.normalTitle" = "20";
+
+/* Class = "UIButton"; normalTitle = "6"; ObjectID = "5N8-60-pvg"; */
+"5N8-60-pvg.normalTitle" = "6";
+
+/* Class = "UIButton"; normalTitle = "7"; ObjectID = "5Rp-oU-oeV"; */
+"5Rp-oU-oeV.normalTitle" = "7";
+
+/* Class = "UILabel"; text = "SplitTree"; ObjectID = "6wk-Rz-gX2"; */
+"6wk-Rz-gX2.text" = "SplitsBoom";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AYb-QK-5wF"; */
+"AYb-QK-5wF.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "2"; ObjectID = "CNc-a9-axL"; */
+"CNc-a9-axL.normalTitle" = "2";
+
+/* Class = "UILabel"; text = "Select a number"; ObjectID = "CxV-Df-Ror"; */
+"CxV-Df-Ror.text" = "Kies een getal";
+
+/* Class = "UIButton"; normalTitle = "Restore purchase"; ObjectID = "F4r-ew-dem"; */
+"F4r-ew-dem.normalTitle" = "Herstel aankoop";
+
+/* Class = "UIButton"; normalTitle = "3"; ObjectID = "Gmm-Td-tpQ"; */
+"Gmm-Td-tpQ.normalTitle" = "3";
+
+/* Class = "UIButton"; normalTitle = "4"; ObjectID = "HFj-NA-pfA"; */
+"HFj-NA-pfA.normalTitle" = "4";
+
+/* Class = "UIButton"; normalTitle = "13"; ObjectID = "O59-YE-cOY"; */
+"O59-YE-cOY.normalTitle" = "13";
+
+/* Class = "UIButton"; normalTitle = "10"; ObjectID = "Osd-jD-Qzg"; */
+"Osd-jD-Qzg.normalTitle" = "10";
+
+/* Class = "UIButton"; normalTitle = "12"; ObjectID = "QSR-i7-6ct"; */
+"QSR-i7-6ct.normalTitle" = "12";
+
+/* Class = "UIButton"; normalTitle = "16"; ObjectID = "Xil-1z-C1k"; */
+"Xil-1z-C1k.normalTitle" = "16";
+
+/* Class = "UIButton"; normalTitle = "14"; ObjectID = "Yz9-La-DU8"; */
+"Yz9-La-DU8.normalTitle" = "14";
+
+/* Class = "UIButton"; normalTitle = "19"; ObjectID = "ZG7-TV-w97"; */
+"ZG7-TV-w97.normalTitle" = "19";
+
+/* Class = "UILabel"; text = "New record!"; ObjectID = "ZIl-WU-zyH"; */
+"ZIl-WU-zyH.text" = "Nieuw record!";
+
+/* Class = "UILabel"; text = "Tree"; ObjectID = "Zxu-Km-t6J"; */
+"Zxu-Km-t6J.text" = "Boom";
+
+/* Class = "UIButton"; normalTitle = "Random"; ObjectID = "c6E-Uk-qwg"; */
+"c6E-Uk-qwg.normalTitle" = "Random";
+
+/* Class = "UIButton"; normalTitle = "9"; ObjectID = "cNW-Ed-Vma"; */
+"cNW-Ed-Vma.normalTitle" = "9";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eBP-44-45b"; */
+"eBP-44-45b.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Unlock all trees"; ObjectID = "eVb-5m-ZC3"; */
+"eVb-5m-ZC3.normalTitle" = "Ontsluit alle bomen";
+
+/* Class = "UIButton"; normalTitle = "Again"; ObjectID = "efR-O5-bA5"; */
+"efR-O5-bA5.normalTitle" = "Opnieuw";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "efS-Qp-ECo"; */
+"efS-Qp-ECo.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Reset all trees"; ObjectID = "eie-ys-VER"; */
+"eie-ys-VER.normalTitle" = "Begin opnieuw";
+
+/* Class = "UIButton"; normalTitle = "17"; ObjectID = "eqb-NI-c06"; */
+"eqb-NI-c06.normalTitle" = "17";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "hCG-Ml-dKO"; */
+"hCG-Ml-dKO.normalTitle" = "Terug";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "jbP-fz-N4Q"; */
+"jbP-fz-N4Q.normalTitle" = "Volgende";
+
+/* Class = "UIButton"; normalTitle = "11"; ObjectID = "k9I-9x-2SF"; */
+"k9I-9x-2SF.normalTitle" = "11";
+
+/* Class = "UILabel"; text = "Time:"; ObjectID = "lLV-rN-G9f"; */
+"lLV-rN-G9f.text" = "Tijd:";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "lxW-6B-62h"; */
+"lxW-6B-62h.normalTitle" = "Klaar";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "ogq-x8-q2Y"; */
+"ogq-x8-q2Y.text" = "Tijd";
+
+/* Class = "UIButton"; normalTitle = "R"; ObjectID = "pZk-4e-Xu6"; */
+"pZk-4e-Xu6.normalTitle" = "R";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "plP-BJ-OxB"; */
+"plP-BJ-OxB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rOy-V8-uV0"; */
+"rOy-V8-uV0.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "8"; ObjectID = "uXu-Oy-yWf"; */
+"uXu-Oy-yWf.normalTitle" = "8";
+
+/* Class = "UIButton"; normalTitle = "15"; ObjectID = "wJY-hc-uAs"; */
+"wJY-hc-uAs.normalTitle" = "15";
+
+/* Class = "UIButton"; normalTitle = "18"; ObjectID = "wOV-e0-gVC"; */
+"wOV-e0-gVC.normalTitle" = "18";

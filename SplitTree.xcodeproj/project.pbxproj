@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F58780B5209B3E4B0044157B /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58780B4209B3E4B0044157B /* UIColor+Hex.swift */; };
 		F58780B7209B3EED0044157B /* UIColor+FlatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */; };
+		F58780BA209D2DD00044157B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58780B9209D2DD00044157B /* StoreKit.framework */; };
+		F58780BF209D308A0044157B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F58780C1209D308A0044157B /* Localizable.strings */; };
 		F5D416612093C4C500A5A32C /* SplitTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */; };
 		F5D41663209A69C900A5A32C /* FullVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41662209A69C900A5A32C /* FullVersion.swift */; };
 		F5D41665209A6A0E00A5A32C /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41664209A6A0E00A5A32C /* IAPHelper.swift */; };
@@ -23,6 +25,11 @@
 /* Begin PBXFileReference section */
 		F58780B4209B3E4B0044157B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
+		F58780B9209D2DD00044157B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F58780BB209D2E780044157B /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		F58780BC209D2E790044157B /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F58780C0209D308A0044157B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F58780C2209D308E0044157B /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitTreeViewController.swift; sourceTree = "<group>"; };
 		F5D41662209A69C900A5A32C /* FullVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullVersion.swift; sourceTree = "<group>"; };
 		F5D41664209A6A0E00A5A32C /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
@@ -41,17 +48,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58780BA209D2DD00044157B /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F58780B8209D2DD00044157B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F58780B9209D2DD00044157B /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F5DB50CD2093AF6B008AA70F = {
 			isa = PBXGroup;
 			children = (
 				F5DB50D82093AF6C008AA70F /* SplitTree */,
 				F5DB50D72093AF6C008AA70F /* Products */,
+				F58780B8209D2DD00044157B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +95,7 @@
 				F5DB50E32093AF6C008AA70F /* Assets.xcassets */,
 				F5DB50E52093AF6C008AA70F /* LaunchScreen.storyboard */,
 				F5DB50E82093AF6C008AA70F /* Info.plist */,
+				F58780C1209D308A0044157B /* Localizable.strings */,
 			);
 			path = SplitTree;
 			sourceTree = "<group>";
@@ -116,6 +134,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = HUS279SULR;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,6 +149,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = F5DB50CD2093AF6B008AA70F;
 			productRefGroup = F5DB50D72093AF6C008AA70F /* Products */;
@@ -143,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DB50E72093AF6C008AA70F /* LaunchScreen.storyboard in Resources */,
+				F58780BF209D308A0044157B /* Localizable.strings in Resources */,
 				F5DB50E42093AF6C008AA70F /* Assets.xcassets in Resources */,
 				F5DB50DF2093AF6C008AA70F /* Main.storyboard in Resources */,
 			);
@@ -169,10 +194,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F58780C1209D308A0044157B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F58780C0209D308A0044157B /* Base */,
+				F58780C2209D308E0044157B /* nl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F5DB50DD2093AF6C008AA70F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F5DB50DE2093AF6C008AA70F /* Base */,
+				F58780BB209D2E780044157B /* nl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -181,6 +216,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F5DB50E62093AF6C008AA70F /* Base */,
+				F58780BC209D2E790044157B /* nl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -192,6 +228,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -243,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
