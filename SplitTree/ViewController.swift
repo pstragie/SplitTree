@@ -188,22 +188,23 @@ class ViewController: UIViewController {
             button.layer.borderWidth = 2
             let tree = Int(myButtons.index(of: button)!) + 1
             // Load data
-            
+            let startColor: CGColor = UIColor.FlatColor.Green.Fern.cgColor
+            let doneColor: CGColor = UIColor.FlatColor.Yellow.Turbo.cgColor
             let storedDict = localdata.dictionary(forKey: "solvedNumbers")
             if let solvedForTree = storedDict?[String(tree)] {
                 let solvedArray = solvedForTree as? Array<Int>
                 if (solvedArray?.count)! - 1 >= tree {
-                    button.layer.backgroundColor = UIColor.yellow.cgColor
-                    button.layer.borderColor = UIColor.green.cgColor
+                    button.layer.backgroundColor = doneColor
+                    button.layer.borderColor = startColor
                 } else if (solvedArray?.count)! >= 1 {
                     button.layer.borderColor = UIColor.darkGray.cgColor
                 } else {
                     button.layer.borderColor = UIColor.black.cgColor
-                    button.layer.backgroundColor = UIColor.green.cgColor
+                    button.layer.backgroundColor = startColor
                 }
             } else {
                 button.layer.borderColor = UIColor.black.cgColor
-                button.layer.backgroundColor = UIColor.green.cgColor
+                button.layer.backgroundColor = startColor
             }
         }
         

@@ -203,7 +203,9 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             label.layer.borderColor = UIColor.black.cgColor
             label.layer.cornerRadius = 5
         }
-        
+        treeLabel.layer.borderWidth = 1
+        treeLabel.layer.borderColor = UIColor.black.cgColor
+        treeLabel.layer.cornerRadius = 5
         prepareNumbers()
         right1.becomeFirstResponder()
         if self.treeSelection! == 2 || self.treeSelection! == 3 {
