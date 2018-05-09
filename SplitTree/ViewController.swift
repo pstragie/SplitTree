@@ -357,7 +357,7 @@ class ViewController: UIViewController {
         
         strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 220, height: 46))
         strLabel.text = title
-        strLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
+        strLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)
         strLabel.textColor = UIColor(white: 0.5, alpha: 0.7)
         
         effectView.frame = CGRect(x: view.frame.midX - strLabel.frame.width/2, y: view.frame.midY - strLabel.frame.height/2 , width: 220, height: 46)
@@ -373,7 +373,7 @@ class ViewController: UIViewController {
         self.view.addSubview(effectView)
     }
 
-    func enableButton() {
+    @objc func enableButton() {
         self.unlockButton.isEnabled = true
         self.restorePurchaseButton.isEnabled = true
     }
@@ -493,7 +493,7 @@ class ViewController: UIViewController {
     }
     
     
-    func answeredOK() {
+    @objc func answeredOK() {
         //        print("Answer: \(answerField.text!)")
         let parAnswer = answerField.text?.trimmingCharacters(in: .whitespaces)
         if parAnswer == "Eleven" || parAnswer == "eleven" || parAnswer == "ELEVEN" {
@@ -512,7 +512,8 @@ class ViewController: UIViewController {
         answerField.resignFirstResponder()
         parentalGate.isHidden = true
     }
-    func answerCancel() {
+    
+    @objc func answerCancel() {
         self.effectView.removeFromSuperview()
         parentalGate.isHidden = true
         parentalCheck = false

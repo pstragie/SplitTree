@@ -373,6 +373,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.isUserInteractionEnabled = true
         textField.isEnabled = true
+        textField.becomeFirstResponder()
         return true
     }
     // MARK: keyboard return function
@@ -416,11 +417,11 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
  
     // MARK: - Timer
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1/100, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1/100, target: self,   selector: #selector(updateTimer), userInfo: nil, repeats: true)
         RunLoop.current.add(self.timer, forMode: RunLoopMode.commonModes)
     }
     
-    func updateTimer() {
+    @objc func updateTimer() {
         honderdsten += 1
         if honderdsten > 100000.0 {
             self.invalidateTimer()
