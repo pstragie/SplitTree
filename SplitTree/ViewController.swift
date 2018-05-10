@@ -88,6 +88,7 @@ class ViewController: UIViewController {
                 if IAPHelper.canMakePayments() {
                     //                print("Can make payments")
                     SplitTreeFull.store.buyProduct(iapProducts[0])
+                    setupLayout()
                     self.viewWillLayoutSubviews()
                 } else {
                     // MARK: in-app-purchase fail message
@@ -114,6 +115,7 @@ class ViewController: UIViewController {
                 }
                 parentalCheck = false
             }
+            setupLayout()
             self.viewWillLayoutSubviews()
         } else {
             self.answerField.resignFirstResponder()
