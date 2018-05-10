@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  SplitTree
+
+  Created by Pieter Stragier on 05/05/2018.
+  Copyright © 2018 PWS-apps. All rights reserved.
+*/
+
+"Parental control" = "Controllo dei genitori";
+"Grown ups only!" = "Solo adulti!";
+"Answer correct to buy the full version" = "Rispondi correttamente per acquistare la versione completa";
+"Answer correct to continue" = "Rispondi corretto per continuare";
+"How much is SEVENTEEN + SEVEN - THIRTEEN? (in words)" = "Quant'è SEVENTEEN + SEVEN - THIRTEEN? (in inglese)";
+"Cancel" = "Annulla";
+"OK" = "OK";
+"Wrong answer" = "Risposta sbagliata";
+"The answer you provided was not correct, try again." = "La risposta non era corretta, riprova.";
+"All progress will be lost!" = "Tutti i progressi saranno persi!";
+"Are you sure you want to reset all trees?" = "Sei sicuro di voler resettare tutto?";
+"restoring purchase..." = "ripristinare l'acquisto...";
+"contacting AppStore..." = "contattando l'AppStore...";
+"In-app purchases not enabled" = "Acquisto in-app non abilitato";
+"Please enable in-app purchase in settings" = "Si prega di abilitare l'acquisto in-app nelle impostazioni";
+"Settings" = "Impostazioni";
+"You need a working internet connection" = "Hai bisogno di una connessione internet funzionante";
+"Check your connection settings and try again." = "Controlla le tue impostazioni e riprova.";
+"Purchase failed" = "Acquisto fallito";

@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     var parentalGate = UIView()
     var parentalCheck: Bool = false
     let answerField = UITextField()
+    let startColor: CGColor = UIColor.FlatColor.Green.Fern.cgColor
+    let doneColor: CGColor = UIColor.FlatColor.Yellow.Turbo.cgColor
     
     @IBOutlet weak var restorePurchaseButton: UIButton!
     @IBOutlet var myButtons: [UIButton]!
@@ -75,6 +77,8 @@ class ViewController: UIViewController {
         setupParentalGateView(option: "buy")
         //parentalGate window will continue to passParentalControlAndBuy
         parentalGate.isHidden = false
+        setupLayout()
+        viewWillLayoutSubviews()
     }
     
     func passParentalControlAndBuy() {
@@ -169,40 +173,45 @@ class ViewController: UIViewController {
             unlockButton.isHidden = true
             for lockedButton in lockedButtons {
                 lockedButton.isEnabled = true
+                lockedButton.setBackgroundImage(nil, for: .normal)
             }
         } else {
             unlockButton.isHidden = false
             for lockedButton in lockedButtons {
                 lockedButton.isEnabled = false
-                lockedButton.setBackgroundImage(#imageLiteral(resourceName: "Black_Lock").withAlignmentRectInsets(UIEdgeInsetsMake(5, 5, 5, 5)), for: .normal)
-            }
-            
-            
+                lockedButton.setBackgroundImage(#imageLiteral(resourceName: "Black_Lock").withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 0, 0)), for: .normal)
+            }            
         }
         resetButton.layer.borderWidth = 2
         resetButton.layer.cornerRadius = 10
         unlockButton.layer.borderWidth = 2
         unlockButton.layer.cornerRadius = 10
+        restorePurchaseButton.layer.borderWidth = 2
+        restorePurchaseButton.layer.cornerRadius = 10
         for button in myButtons {
             
             button.layer.borderWidth = 2
             let tree = Int(myButtons.index(of: button)!) + 1
             // Load data
-            let startColor: CGColor = UIColor.FlatColor.Green.Fern.cgColor
-            let doneColor: CGColor = UIColor.FlatColor.Yellow.Turbo.cgColor
+            
             let storedDict = localdata.dictionary(forKey: "solvedNumbers")
             if let solvedForTree = storedDict?[String(tree)] {
                 let solvedArray = solvedForTree as? Array<Int>
                 if (solvedArray?.count)! - 1 >= tree {
+                    // completely solved
                     button.layer.backgroundColor = doneColor
                     button.layer.borderColor = startColor
                 } else if (solvedArray?.count)! >= 1 {
-                    button.layer.borderColor = UIColor.darkGray.cgColor
+                    // partly solved
+                    button.layer.borderColor = doneColor
+                    button.layer.backgroundColor = startColor
                 } else {
+                    // Nothing solved
                     button.layer.borderColor = UIColor.black.cgColor
                     button.layer.backgroundColor = startColor
                 }
             } else {
+                // Nothing ever solved
                 button.layer.borderColor = UIColor.black.cgColor
                 button.layer.backgroundColor = startColor
             }
@@ -289,13 +298,22 @@ class ViewController: UIViewController {
                 if let solvedForTree = storedDict?[String(sourceViewController.treeSelection!)] {
                     let solvedArray = solvedForTree as? Array<Int>
                     if solvedArray?.count == (sourceViewController.treeSelection! + 1) {
-                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.green.cgColor
-                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = UIColor.yellow.cgColor
+                        // Completely solved
+                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = startColor
+                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = doneColor
+                    } else if (solvedArray?.count)! >= 1 {
+                        // Partly solved
+                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = doneColor
+                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = startColor
                     } else {
-                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.yellow.cgColor
+                        // Nothing correct yet
+                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.black.cgColor
+                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = startColor
                     }
                 } else {
-                    myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.yellow.cgColor
+                    // Never solved a single one
+                    myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.black.cgColor
+                    myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = startColor
                 }
             }
         }
@@ -368,8 +386,8 @@ class ViewController: UIViewController {
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
         activityIndicator.startAnimating()
         
-        effectView.addSubview(activityIndicator)
-        effectView.addSubview(strLabel)
+        effectView.contentView.addSubview(activityIndicator)
+        effectView.contentView.addSubview(strLabel)
         self.view.addSubview(effectView)
     }
 

@@ -24,6 +24,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6A64AE720A4AFB800C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		B6A64AE820A4AFB900C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B6A64AE920A4AFBA00C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6A64AEA20A4AFBB00C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6A64AEB20A4AFC500C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		B6A64AEC20A4AFC600C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B6A64AED20A4AFC700C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6A64AEE20A4AFC800C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6A64AEF20A4AFD100C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		B6A64AF020A4AFD100C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B6A64AF120A4AFD200C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6A64AF220A4AFD300C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F58780B4209B3E4B0044157B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
 		F58780B9209D2DD00044157B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -155,6 +167,9 @@
 				en,
 				Base,
 				nl,
+				fr,
+				de,
+				it,
 			);
 			mainGroup = F5DB50CD2093AF6B008AA70F;
 			productRefGroup = F5DB50D72093AF6C008AA70F /* Products */;
@@ -205,6 +220,9 @@
 			children = (
 				F58780C0209D308A0044157B /* Base */,
 				F58780C2209D308E0044157B /* nl */,
+				B6A64AE920A4AFBA00C1C508 /* fr */,
+				B6A64AED20A4AFC700C1C508 /* de */,
+				B6A64AF120A4AFD200C1C508 /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -214,6 +232,9 @@
 			children = (
 				F58780C6209D36900044157B /* Base */,
 				F58780C8209D36950044157B /* nl */,
+				B6A64AEA20A4AFBB00C1C508 /* fr */,
+				B6A64AEE20A4AFC800C1C508 /* de */,
+				B6A64AF220A4AFD300C1C508 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -223,6 +244,9 @@
 			children = (
 				F5DB50DE2093AF6C008AA70F /* Base */,
 				F58780BB209D2E780044157B /* nl */,
+				B6A64AE720A4AFB800C1C508 /* fr */,
+				B6A64AEB20A4AFC500C1C508 /* de */,
+				B6A64AEF20A4AFD100C1C508 /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -232,6 +256,9 @@
 			children = (
 				F5DB50E62093AF6C008AA70F /* Base */,
 				F58780BC209D2E790044157B /* nl */,
+				B6A64AE820A4AFB900C1C508 /* fr */,
+				B6A64AEC20A4AFC600C1C508 /* de */,
+				B6A64AF020A4AFD100C1C508 /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

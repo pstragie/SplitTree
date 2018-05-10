@@ -187,8 +187,8 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         } else {
             randomButton.isUserInteractionEnabled = false
             nextButton.isUserInteractionEnabled = false
-            randomButton.setImage(#imageLiteral(resourceName: "Black_Lock"), for: .normal)
-            nextButton.setImage(#imageLiteral(resourceName: "Black_Lock"), for: .normal)
+            randomButton.setImage(#imageLiteral(resourceName: "Black_Lock_NoEdge"), for: .normal)
+            nextButton.setImage(#imageLiteral(resourceName: "Black_Lock_NoEdge"), for: .normal)
         }
         randomButton.isHidden = true
         nextButton.isHidden = true
@@ -373,7 +373,6 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.isUserInteractionEnabled = true
         textField.isEnabled = true
-        textField.becomeFirstResponder()
         return true
     }
     // MARK: keyboard return function
@@ -446,7 +445,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     func showTime() {
         TimeStaticLabel.isHidden = false
         timeLabel.isHidden = false
-        timeLabel.text = "\((honderdsten).rounded() / 100) sec"
+        timeLabel.text = "\((honderdsten).rounded() / 100) s"
         storeTime(tree: treeSelection!, newTime: Float(honderdsten))
     }
     
