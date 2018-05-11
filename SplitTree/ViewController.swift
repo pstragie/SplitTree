@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         restorePurchaseButton.isEnabled = false
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ViewController.enableButton), userInfo: nil, repeats: false)
         SplitTreeFull.store.restorePurchases()
-        setupLayout()
+        self.setupLayout()
         self.viewWillLayoutSubviews()
     }
     
@@ -77,8 +77,8 @@ class ViewController: UIViewController {
         setupParentalGateView(option: "buy")
         //parentalGate window will continue to passParentalControlAndBuy
         parentalGate.isHidden = false
-        setupLayout()
-        viewWillLayoutSubviews()
+        self.setupLayout()
+        self.viewWillLayoutSubviews()
     }
     
     func passParentalControlAndBuy() {
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
                 if IAPHelper.canMakePayments() {
                     //                print("Can make payments")
                     SplitTreeFull.store.buyProduct(iapProducts[0])
-                    setupLayout()
+                    self.setupLayout()
                     self.viewWillLayoutSubviews()
                 } else {
                     // MARK: in-app-purchase fail message
@@ -115,7 +115,7 @@ class ViewController: UIViewController {
                 }
                 parentalCheck = false
             }
-            setupLayout()
+            self.setupLayout()
             self.viewWillLayoutSubviews()
         } else {
             self.answerField.resignFirstResponder()
@@ -188,8 +188,7 @@ class ViewController: UIViewController {
         resetButton.layer.cornerRadius = 10
         unlockButton.layer.borderWidth = 2
         unlockButton.layer.cornerRadius = 10
-        restorePurchaseButton.layer.borderWidth = 2
-        restorePurchaseButton.layer.cornerRadius = 10
+        
         for button in myButtons {
             
             button.layer.borderWidth = 2

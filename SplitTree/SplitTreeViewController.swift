@@ -175,6 +175,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             button.layer.cornerRadius = 10
         }
         for textField in myTextFields {
+            textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.black.cgColor
             textField.layer.cornerRadius = 5
@@ -378,6 +379,187 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         textField.isEnabled = true
         return true
     }
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        print("textFieldDidChange")
+        if self.treeSelection! >= 4 {
+            switch textField {
+            case right1:
+                if Int(textField.text!) == Int(treeSelection!) - Int(left1.text!)! {
+                    checkNextResponder(textField)
+                }
+            case left2:
+                if Int(textField.text!) == Int(treeSelection!) - Int(right2.text!)! {
+                    checkNextResponder(textField)
+                }
+            case right3:
+                if Int(textField.text!) == Int(treeSelection!) - Int(left3.text!)! {
+                    checkNextResponder(textField)
+                }
+            case left4:
+                if Int(textField.text!) == Int(treeSelection!) - Int(right4.text!)! {
+                    checkNextResponder(textField)
+                }
+            default:
+                if Int(textField.text!) == Int(treeSelection!) - Int(left5.text!)! {
+                    checkNextResponder(textField)
+                }
+            }
+        } else {
+            switch textField {
+            case right1:
+                if Int(textField.text!) == Int(treeSelection!) - Int(left1.text!)! {
+                    checkNextResponder(textField)
+                }
+            case left2:
+                if Int(textField.text!) == Int(treeSelection!) - Int(right2.text!)! {
+                    checkNextResponder(textField)
+                }
+            default:
+                if Int(textField.text!) == Int(treeSelection!) - Int(left3.text!)! {
+                    checkNextResponder(textField)
+                }
+            }
+        }
+        
+    }
+    
+    func checkNextResponder(_ textField: UITextField) {
+        print("checkNextResponder")
+        if self.treeSelection! >= 4 {
+            switch textField {
+            case right1:
+                if left2.text! == "" || Int(left2.text!)! != Int(treeSelection!) - Int(right2.text!)! {
+                    left2.selectAll(self)
+                    left2.becomeFirstResponder()
+                } else {
+                    if right3.text! == "" || Int(right3.text!)! != Int(treeSelection!) - Int(left3.text!)! {
+                        right3.selectAll(self)
+                        right3.becomeFirstResponder()
+                    } else {
+                        if left4.text! == "" || Int(left4.text!)! != Int(treeSelection!) - Int(right4.text!)! {
+                            left4.selectAll(self)
+                            left4.becomeFirstResponder()
+                        } else {
+                            if right5.text! == "" || Int(right5.text!)! != Int(treeSelection!) - Int(left5.text!)! {
+                                right5.selectAll(self)
+                                right5.becomeFirstResponder()
+                            } else {
+                                textField.resignFirstResponder()
+                                self.doneButtonTapped(doneButton)
+                            }
+                        }
+                    }
+                }
+            case left2:
+                if right3.text! == "" || Int(right3.text!)! != Int(treeSelection!) - Int(left3.text!)! {
+                    right3.selectAll(self)
+                    right3.becomeFirstResponder()
+                } else {
+                    if left4.text! == "" || Int(left4.text!)! != Int(treeSelection!) - Int(right4.text!)! {
+                        left4.selectAll(self)
+                        left4.becomeFirstResponder()
+                    } else {
+                        if right5.text! == "" || Int(right5.text!)! != Int(treeSelection!) - Int(left5.text!)! {
+                            right5.selectAll(self)
+                            right5.becomeFirstResponder()
+                        } else {
+                            textField.resignFirstResponder()
+                            self.doneButtonTapped(doneButton)
+                        }
+                    }
+                }
+            case right3:
+                if left4.text! == "" || Int(left4.text!)! != Int(treeSelection!) - Int(right4.text!)! {
+                    left4.selectAll(self)
+                    left4.becomeFirstResponder()
+                } else {
+                    if right5.text! == "" || Int(right5.text!)! != Int(treeSelection!) - Int(left5.text!)! {
+                        right5.selectAll(self)
+                        right5.becomeFirstResponder()
+                    } else {
+                        textField.resignFirstResponder()
+                        self.doneButtonTapped(doneButton)
+                    }
+                }
+            case left4:
+                if right5.text! == "" || Int(right5.text!)! != Int(treeSelection!) - Int(left5.text!)! {
+                    right5.selectAll(self)
+                    right5.becomeFirstResponder()
+                } else {
+                    textField.resignFirstResponder()
+                    self.doneButtonTapped(doneButton)
+                }
+            default:
+                if right1.text! == "" || Int(right1.text!)! != Int(treeSelection!) - Int(left1.text!)! {
+                    right1.selectAll(self)
+                    right1.becomeFirstResponder()
+                } else {
+                    if left2.text! == "" || Int(left2.text!)! != Int(treeSelection!) - Int(right2.text!)! {
+                        left2.selectAll(self)
+                        left2.becomeFirstResponder()
+                    } else {
+                        if right3.text! == "" || Int(right3.text!)! != Int(treeSelection!) - Int(left3.text!)! {
+                            right3.selectAll(self)
+                            right3.becomeFirstResponder()
+                        } else {
+                            if left4.text! == "" || Int(left4.text!)! != Int(treeSelection!) - Int(right4.text!)! {
+                                left4.selectAll(self)
+                                left4.becomeFirstResponder()
+                            } else {
+                                if right5.text! == "" || Int(right5.text!)! != Int(treeSelection!) - Int(left5.text!)! {
+                                    right5.selectAll(self)
+                                    right5.becomeFirstResponder()
+                                } else {
+                                    textField.resignFirstResponder()
+                                    self.doneButtonTapped(doneButton)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            switch textField {
+            case right1:
+                if left2.text! == "" || Int(left2.text!)! != Int(treeSelection!) - Int(right2.text!)! {
+                    left2.selectAll(self)
+                    left2.becomeFirstResponder()
+                } else {
+                    if right3.text! == "" || Int(right3.text!)! != Int(treeSelection!) - Int(left3.text!)! {
+                        right3.selectAll(self)
+                        right3.becomeFirstResponder()
+                    } else {
+                        textField.resignFirstResponder()
+                        self.doneButtonTapped(doneButton)
+                }
+            }
+            case left2:
+                if right3.text! == "" || Int(right3.text!)! != Int(treeSelection!) - Int(left3.text!)! {
+                    right3.selectAll(self)
+                    right3.becomeFirstResponder()
+                } else {
+                    textField.resignFirstResponder()
+                    self.doneButtonTapped(doneButton)
+            }
+            default:
+                if right1.text! == "" || Int(right1.text!)! != Int(treeSelection!) - Int(left1.text!)! {
+                    if left2.text! == "" || Int(left2.text!)! != Int(treeSelection!) - Int(right2.text!)! {
+                        left2.selectAll(self)
+                        left2.becomeFirstResponder()
+                    } else {
+                        if right3.text! == "" || Int(right3.text!)! != Int(treeSelection!) - Int(left3.text!)! {
+                            right3.selectAll(self)
+                            right3.becomeFirstResponder()
+                        } else {
+                            textField.resignFirstResponder()
+                            self.doneButtonTapped(doneButton)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: keyboard return function
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // go to next inputfield
@@ -504,5 +686,9 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     
     func invalidateTimer() {
         self.timer.invalidate()
+    }
+    
+    override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
     }
 }

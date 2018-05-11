@@ -199,6 +199,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
             let buyButton = otherViewController.unlockButton
             buyButton?.isHidden = true
             otherViewController.effectView.removeFromSuperview()
+            otherViewController.setupLayout()
             otherViewController.viewWillLayoutSubviews()
         }
     }

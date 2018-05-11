@@ -408,7 +408,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4r-ew-dem">
                                 <rect key="frame" x="205" y="728" width="162" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vGf-LH-UqM"/>
                                 </constraints>
@@ -695,7 +694,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="47.333333333333336" height="266.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="efS-Qp-ECo">
-                                                <rect key="frame" x="0.0" y="0.0" width="47.333333333333336" height="47"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="47.333333333333336" height="46.666666666666664"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -706,7 +705,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qy1-jH-W8h">
-                                                <rect key="frame" x="0.0" y="55" width="47.333333333333336" height="46.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="54.666666666666686" width="47.333333333333336" height="47"/>
                                                 <color key="textColor" red="0.65539645259795953" green="0.119702997014418" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="go"/>
@@ -740,7 +739,7 @@
                                         <rect key="frame" x="67.333333333333343" y="0.0" width="47.666666666666657" height="266.33333333333331"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="IyH-nz-0uF">
-                                                <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="47"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="46.666666666666664"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="IyH-nz-0uF" secondAttribute="height" multiplier="1:1" id="7x0-xk-GI7"/>
                                                 </constraints>
@@ -749,7 +748,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="go"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="eBP-44-45b">
-                                                <rect key="frame" x="0.0" y="55" width="47.666666666666664" height="46.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="54.666666666666686" width="47.666666666666664" height="47"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
