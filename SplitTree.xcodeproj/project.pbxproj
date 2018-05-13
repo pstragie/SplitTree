@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6BFC51120A6FE7E00D80521 /* RekenBladViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFC51020A6FE7E00D80521 /* RekenBladViewController.swift */; };
 		F58780B5209B3E4B0044157B /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58780B4209B3E4B0044157B /* UIColor+Hex.swift */; };
 		F58780B7209B3EED0044157B /* UIColor+FlatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */; };
 		F58780BA209D2DD00044157B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58780B9209D2DD00044157B /* StoreKit.framework */; };
@@ -36,6 +37,7 @@
 		B6A64AF020A4AFD100C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B6A64AF120A4AFD200C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6A64AF220A4AFD300C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6BFC51020A6FE7E00D80521 /* RekenBladViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RekenBladViewController.swift; sourceTree = "<group>"; };
 		F58780B4209B3E4B0044157B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
 		F58780B9209D2DD00044157B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +103,7 @@
 				F5DB50D92093AF6C008AA70F /* AppDelegate.swift */,
 				F5DB50DB2093AF6C008AA70F /* ViewController.swift */,
 				F5D416602093C4C500A5A32C /* SplitTreeViewController.swift */,
+				B6BFC51020A6FE7E00D80521 /* RekenBladViewController.swift */,
 				F5DB50DD2093AF6C008AA70F /* Main.storyboard */,
 				F5D41662209A69C900A5A32C /* FullVersion.swift */,
 				F5D41664209A6A0E00A5A32C /* IAPHelper.swift */,
@@ -204,6 +207,7 @@
 				F58780B5209B3E4B0044157B /* UIColor+Hex.swift in Sources */,
 				F5D41667209A6B2900A5A32C /* ConnectionCheck.swift in Sources */,
 				F5DB50DC2093AF6C008AA70F /* ViewController.swift in Sources */,
+				B6BFC51120A6FE7E00D80521 /* RekenBladViewController.swift in Sources */,
 				F5D41663209A69C900A5A32C /* FullVersion.swift in Sources */,
 				F58780B7209B3EED0044157B /* UIColor+FlatColors.swift in Sources */,
 				F5D416612093C4C500A5A32C /* SplitTreeViewController.swift in Sources */,

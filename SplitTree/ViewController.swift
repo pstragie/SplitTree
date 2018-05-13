@@ -22,6 +22,10 @@ class ViewController: UIViewController {
     let answerField = UITextField()
     let startColor: CGColor = UIColor.FlatColor.Green.Fern.cgColor
     let doneColor: CGColor = UIColor.FlatColor.Yellow.Turbo.cgColor
+    var rekenBladMessageView = UIView()
+    var countSolved: Int = 0
+    var solvedTreeArray: Array<Int> = []
+    var allTreesArray: Array<Int> = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     
     @IBOutlet weak var restorePurchaseButton: UIButton!
     @IBOutlet var myButtons: [UIButton]!
@@ -48,7 +52,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet var lockedButtons: [UIButton]!
-
+    @IBOutlet weak var rekenbladButton: UIButton!
+    
     @IBAction func resetTapped(_ sender: UIButton) {
         let controller = UIAlertController(title: NSLocalizedString("All progress will be lost!", comment: ""), message: NSLocalizedString("Are you sure you want to reset all trees?", comment: ""), preferredStyle: .alert)
         let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { alertAction in self.resetAll() }
@@ -127,6 +132,30 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func rekenbladButtonTapped(_ sender: UIButton) {
+        // check if all trees up to ten have been solved
+        let storedDict = localdata.dictionary(forKey: "solvedNumbers")
+        let tenArray: Array<Int> = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        
+        for number in tenArray {
+            if let solvedForTree = storedDict?[String(number)] {
+                let solvedArray = solvedForTree as? Array<Int>
+                if (solvedArray?.count)! - 1 >= number {
+                    // completely solved
+                    self.countSolved += 1
+                }
+            }
+        }
+        for number in allTreesArray {
+            if let solvedForTree = storedDict?[String(number)] {
+                let solvedArray = solvedForTree as? Array<Int>
+                if (solvedArray?.count)! - 1 >= number {
+                    // completely solved
+                    self.solvedTreeArray.append(number)
+                }
+            }
+        }
+    }
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -188,6 +217,8 @@ class ViewController: UIViewController {
         resetButton.layer.cornerRadius = 10
         unlockButton.layer.borderWidth = 2
         unlockButton.layer.cornerRadius = 10
+        rekenbladButton.layer.borderWidth = 2
+        rekenbladButton.layer.cornerRadius = 10
         
         for button in myButtons {
             
@@ -284,6 +315,10 @@ class ViewController: UIViewController {
         case "Segue20":
             let destination = segue.destination as! SplitTreeViewController
             destination.treeSelection = 20
+        case "segueToRekenblad":
+            let destination = segue.destination as! RekenBladViewController
+            destination.numberArray = self.solvedTreeArray
+            destination.countSolved = self.countSolved
         default:
             break
         }
@@ -323,6 +358,7 @@ class ViewController: UIViewController {
     func resetAll() {
         resetData()
         resetTimes()
+        resetScores()
         setupLayout()
         viewWillLayoutSubviews()
     }
@@ -367,6 +403,14 @@ class ViewController: UIViewController {
         }
     }
     
+    func resetScores() {
+        if localdata.object(forKey: "correctAnswers") != nil {
+            localdata.set(0, forKey: "correctAnswers")
+        }
+        if localdata.object(forKey: "totalAnswers") != nil {
+            localdata.set(0, forKey: "totalAnswers")
+        }
+    }
     // MARK: - Activity Indicator
     func activityIndicatorShow(_ title: String) {
         
