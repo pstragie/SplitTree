@@ -120,9 +120,6 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("countSolved = \(countSolved)")
-        print("numberArray = \(numberArray)")
-        
         if countSolved != 9 {
             // show message
             self.sheetView.isUserInteractionEnabled = false
@@ -234,7 +231,6 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         self.mySubTextFields = mySubTextFields.sorted(by: {$0.tag < $1.tag})
         // numbers for sum
         shuffledSumArray = shuffleArray(array: self.numberArray)
-        print("shuffledSumArray = \(shuffledSumArray)")
         for w in 0...8 {
             let sum = shuffledSumArray[w]
             // random x and y (x+y = sum)
@@ -285,11 +281,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     // MARK: keyboard return function
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // go to next inputfield
-        print("textFieldShouldReturn")
-        print("currentTag = \(textField.tag)")
         let nextTag = nextEmptyFieldTag(currentTag: textField.tag)
-        print("nextTag = \(nextTag)")
-        
         if nextTag == 0 {
             textField.resignFirstResponder()
         } else {
