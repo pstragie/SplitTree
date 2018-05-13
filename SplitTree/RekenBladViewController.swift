@@ -125,15 +125,18 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         
         if countSolved != 9 {
             // show message
-            self.sheetView.isUserInteractionEnabled = true
+            self.sheetView.isUserInteractionEnabled = false
             let notAvailableAlert = UIAlertController(title: NSLocalizedString("Not available yet!", comment: ""), message: NSLocalizedString("Solve all trees up to 10 first.", comment: ""), preferredStyle: .alert)
             let ok = UIAlertAction(title: "Back", style: .default, handler: {(_) in
                 self.performSegue(withIdentifier: "unwindToViewController", sender: self)})
             notAvailableAlert.addAction(ok)
-            //present(notAvailableAlert, animated: true, completion: nil)
+            present(notAvailableAlert, animated: true, completion: nil)
         } else {
             // show new view
             self.sheetView.isUserInteractionEnabled = true
+            for tf in myTextFields {
+                tf.viewWithTag(1)?.becomeFirstResponder()
+            }
         }
         
     }
@@ -179,23 +182,23 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
             textfield.layer.masksToBounds = true
             textfield.backgroundColor = UIColor.white
             textfield.isEnabled = true
+            textfield.adjustsFontSizeToFitWidth = true
+            textfield.allowsEditingTextAttributes = false
         }
         // Fill sums
-        let sumsInDict: Array<Int> = Array(sumsDict.keys)
         for (index, sumLabel) in sumLabels.enumerated() {
-            let sum = sumsInDict[index]
+            let sum = shuffledSumArray[index]
             sumLabel.text = String(sum)
             sumFirstLabels[index].text = String(sumsDict[sum]![0])
-            mySumTextFields[index].text = String(sumsDict[sum]![1])
+            //mySumTextFields[index].text = String(sumsDict[sum]![1])
         }
         
         // Fill subtractions
-        let subsInDict: Array<Int> = Array(minusDict.keys)
         for (index, subLabel) in subtractionLabels.enumerated() {
-            let sum = subsInDict[index]
+            let sum = shuffledMinusArray[index]
             subLabel.text = String(sum)
             subSecondLabels[index].text = String(minusDict[sum]![0])
-            mySubTextFields[index].text = String(minusDict[sum]![1])
+            //mySubTextFields[index].text = String(minusDict[sum]![1])
         }
         
         for label in myLabels {
@@ -207,7 +210,9 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    // MARK: - prepare numbers
     func prepareNumbers() {
+        // Score
         if localdata.object(forKey: "totalAnswers") != nil {
             let totaleScore: Int = localdata.integer(forKey: "totalAnswers")
             self.totalAnswers = totaleScore
@@ -229,6 +234,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         self.mySubTextFields = mySubTextFields.sorted(by: {$0.tag < $1.tag})
         // numbers for sum
         shuffledSumArray = shuffleArray(array: self.numberArray)
+        print("shuffledSumArray = \(shuffledSumArray)")
         for w in 0...8 {
             let sum = shuffledSumArray[w]
             // random x and y (x+y = sum)
@@ -243,7 +249,6 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         }
         // numbers for subtraction
         shuffledMinusArray = shuffleArray(array: self.numberArray)
-
         for w in 0...8 {
             let sum = shuffledMinusArray[w]
             var allNumbersForMinus: Array<Int> = []
@@ -281,10 +286,32 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // go to next inputfield
         print("textFieldShouldReturn")
-        let nextTag = textField.tag + 1
-        for tf in myTextFields {
-            tf.viewWithTag(nextTag)?.becomeFirstResponder()
+        print("currentTag = \(textField.tag)")
+        let nextTag = nextEmptyFieldTag(currentTag: textField.tag)
+        print("nextTag = \(nextTag)")
+        
+        if nextTag == 0 {
+            textField.resignFirstResponder()
+        } else {
+            for tf in myTextFields {
+                tf.viewWithTag(nextTag)?.becomeFirstResponder()
+            }
         }
         return true
+    }
+    
+    func nextEmptyFieldTag(currentTag: Int) -> Int {
+        var ctag: Int = 0
+        if currentTag == myTextFields.count {
+            ctag = 0
+        } else {
+            ctag = currentTag
+        }
+        for tf in myTextFields.sorted(by: {$0.tag < $1.tag})[ctag...myTextFields.count - 1] {
+            if tf.text == "" {
+                return tf.tag
+            }
+        }
+        return 0
     }
 }

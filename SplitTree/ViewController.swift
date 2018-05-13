@@ -134,27 +134,6 @@ class ViewController: UIViewController {
 
     @IBAction func rekenbladButtonTapped(_ sender: UIButton) {
         // check if all trees up to ten have been solved
-        let storedDict = localdata.dictionary(forKey: "solvedNumbers")
-        let tenArray: Array<Int> = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-        
-        for number in tenArray {
-            if let solvedForTree = storedDict?[String(number)] {
-                let solvedArray = solvedForTree as? Array<Int>
-                if (solvedArray?.count)! - 1 >= number {
-                    // completely solved
-                    self.countSolved += 1
-                }
-            }
-        }
-        for number in allTreesArray {
-            if let solvedForTree = storedDict?[String(number)] {
-                let solvedArray = solvedForTree as? Array<Int>
-                if (solvedArray?.count)! - 1 >= number {
-                    // completely solved
-                    self.solvedTreeArray.append(number)
-                }
-            }
-        }
     }
     
     // MARK: - Life cycle
@@ -317,6 +296,7 @@ class ViewController: UIViewController {
             destination.treeSelection = 20
         case "segueToRekenblad":
             let destination = segue.destination as! RekenBladViewController
+            calculateCountSolved()
             destination.numberArray = self.solvedTreeArray
             destination.countSolved = self.countSolved
         default:
@@ -584,5 +564,29 @@ class ViewController: UIViewController {
         answerField.resignFirstResponder()
     }
 
+    func calculateCountSolved() {
+        // check if all trees up to ten have been solved
+        let storedDict = localdata.dictionary(forKey: "solvedNumbers")
+        let tenArray: Array<Int> = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        
+        for number in tenArray {
+            if let solvedForTree = storedDict?[String(number)] {
+                let solvedArray = solvedForTree as? Array<Int>
+                if (solvedArray?.count)! - 1 >= number {
+                    // completely solved
+                    self.countSolved += 1
+                }
+            }
+        }
+        for number in allTreesArray {
+            if let solvedForTree = storedDict?[String(number)] {
+                let solvedArray = solvedForTree as? Array<Int>
+                if (solvedArray?.count)! - 1 >= number {
+                    // completely solved
+                    self.solvedTreeArray.append(number)
+                }
+            }
+        }
+    }
 }
 
