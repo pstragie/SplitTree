@@ -12,7 +12,7 @@
 "5Rp-oU-oeV.normalTitle" = "7";
 
 /* Class = "UILabel"; text = "SplitTree"; ObjectID = "6wk-Rz-gX2"; */
-"6wk-Rz-gX2.text" = "ArbreDivisé";
+"6wk-Rz-gX2.text" = "SplitTree";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "AYb-QK-5wF"; */
 "AYb-QK-5wF.text" = "Label";
@@ -117,16 +117,16 @@
 "wOV-e0-gVC.normalTitle" = "18";
 
 /* Class = "UIButton"; normalTitle = "Practice sheet"; ObjectID = "qXc-zu-HRC"; */
-"qXc-zu-HRC.normalTitle" = "Exercices de calculs"
+"qXc-zu-HRC.normalTitle" = "Exercices de calculs";
 
 /* Class = "UIButton"; normalTitle = "Back"; ObjectID = "lcB-9d-lIi"; */
-"lcB-9d-lIi.normalTitle" = "Retour"
+"lcB-9d-lIi.normalTitle" = "Retour";
 
 /* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "RPm-iJ-6Q0"; */
-"RPm-iJ-6Q0.normalTitle" = "Effacer"
+"RPm-iJ-6Q0.normalTitle" = "Effacer";
 
 /* Class = "UIButton"; normalTitle = "Check Answers"; ObjectID = "IVp-Ya-rL7"; */
-"IVp-Ya-rL7.normalTitle" = "Vérifier"
+"IVp-Ya-rL7.normalTitle" = "Vérifier";
 
 /* Class = "UIButton"; normalTitle = "Shuffle"; ObjectID = "zWk-KU-4nO"; */
-"zWk-KU-4nO.normalTitle" = "Mélanger"
+"zWk-KU-4nO.normalTitle" = "Mélanger";

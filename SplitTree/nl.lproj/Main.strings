@@ -117,16 +117,16 @@
 "wOV-e0-gVC.normalTitle" = "18";
 
 /* Class = "UIButton"; normalTitle = "Practice sheet"; ObjectID = "qXc-zu-HRC"; */
-"qXc-zu-HRC.normalTitle" = "Rekensommen"
+"qXc-zu-HRC.normalTitle" = "Rekensommen";
 
 /* Class = "UIButton"; normalTitle = "Back"; ObjectID = "lcB-9d-lIi"; */
-"lcB-9d-lIi.normalTitle" = "Terug"
+"lcB-9d-lIi.normalTitle" = "Terug";
 
 /* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "RPm-iJ-6Q0"; */
-"RPm-iJ-6Q0.normalTitle" = "Wissen"
+"RPm-iJ-6Q0.normalTitle" = "Wissen";
 
 /* Class = "UIButton"; normalTitle = "Check Answers"; ObjectID = "IVp-Ya-rL7"; */
-"IVp-Ya-rL7.normalTitle" = "Controleer"
+"IVp-Ya-rL7.normalTitle" = "Controleren";
 
 /* Class = "UIButton"; normalTitle = "Shuffle"; ObjectID = "zWk-KU-4nO"; */
-"zWk-KU-4nO.normalTitle" = "Schudden"
+"zWk-KU-4nO.normalTitle" = "Schudden";

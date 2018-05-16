@@ -39,6 +39,7 @@
 		B6A64AF220A4AFD300C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B6BFC51020A6FE7E00D80521 /* RekenBladViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RekenBladViewController.swift; sourceTree = "<group>"; };
 		B6BFC51220A86C2D00D80521 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		B6BFC51420A9A27F00D80521 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F58780B4209B3E4B0044157B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
 		F58780B9209D2DD00044157B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -251,6 +252,7 @@
 				B6A64AEB20A4AFC500C1C508 /* de */,
 				B6A64AEF20A4AFD100C1C508 /* it */,
 				B6BFC51220A86C2D00D80521 /* nl */,
+				B6BFC51420A9A27F00D80521 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -154,6 +154,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         for button in myButtons {
             button.layer.cornerRadius = 0.5 * button.bounds.size.width
             button.clipsToBounds = true
@@ -162,6 +163,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         for button in myButtons {
             button.layer.borderWidth = 2
         }
@@ -169,6 +171,11 @@ class ViewController: UIViewController {
             restorePurchaseButton.isHidden = false
         } else {
             restorePurchaseButton.isHidden = true
+        }
+        if twoAndThree() {
+            rekenbladButton.isEnabled = true
+        } else {
+            rekenbladButton.isEnabled = false
         }
     }
     override func didReceiveMemoryWarning() {
@@ -179,7 +186,7 @@ class ViewController: UIViewController {
     // MARK: - Functions
     // MARK: Setup layout
     func setupLayout() {
-        if SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
+        if !SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
             unlockButton.isHidden = true
             for lockedButton in lockedButtons {
                 lockedButton.isEnabled = true
@@ -198,36 +205,18 @@ class ViewController: UIViewController {
         unlockButton.layer.cornerRadius = 10
         rekenbladButton.layer.borderWidth = 2
         rekenbladButton.layer.cornerRadius = 10
-        
         for button in myButtons {
-            
             button.layer.borderWidth = 2
-            let tree = Int(myButtons.index(of: button)!) + 1
-            // Load data
-            
-            let storedDict = localdata.dictionary(forKey: "solvedNumbers")
-            if let solvedForTree = storedDict?[String(tree)] {
-                let solvedArray = solvedForTree as? Array<Int>
-                if (solvedArray?.count)! - 1 >= tree {
-                    // completely solved
-                    button.layer.backgroundColor = doneColor
-                    button.layer.borderColor = startColor
-                } else if (solvedArray?.count)! >= 1 {
-                    // partly solved
-                    button.layer.borderColor = doneColor
-                    button.layer.backgroundColor = startColor
-                } else {
-                    // Nothing solved
-                    button.layer.borderColor = UIColor.black.cgColor
-                    button.layer.backgroundColor = startColor
-                }
-            } else {
-                // Nothing ever solved
-                button.layer.borderColor = UIColor.black.cgColor
-                button.layer.backgroundColor = startColor
-            }
+            button.titleLabel?.minimumScaleFactor = 0.1
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.contentMode = .scaleToFill
         }
-        
+        checkProgress()
+        if twoAndThree() {
+            rekenbladButton.isEnabled = true
+        } else {
+            rekenbladButton.isEnabled = false
+        }
     }
     
     // MARK: prepare
@@ -296,9 +285,10 @@ class ViewController: UIViewController {
             destination.treeSelection = 20
         case "segueToRekenblad":
             let destination = segue.destination as! RekenBladViewController
-            calculateCountSolved()
-            destination.numberArray = self.solvedTreeArray
-            destination.countSolved = self.countSolved
+            let countSolve = calculateCountSolved()
+            let solveTreeArray = calculateSolvedTree()
+            destination.numberArray = solveTreeArray
+            destination.countSolved = countSolve
         default:
             break
         }
@@ -308,33 +298,14 @@ class ViewController: UIViewController {
     @IBAction func unwindToOverview(segue: UIStoryboardSegue) {
         if let sourceViewController = segue.source as? SplitTreeViewController {
             if sourceViewController.score >= 0 {
-                
                 // check if all numbers have been solved for a tree
-                let storedDict = localdata.dictionary(forKey: "solvedNumbers")
-                if let solvedForTree = storedDict?[String(sourceViewController.treeSelection!)] {
-                    let solvedArray = solvedForTree as? Array<Int>
-                    if solvedArray?.count == (sourceViewController.treeSelection! + 1) {
-                        // Completely solved
-                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = startColor
-                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = doneColor
-                    } else if (solvedArray?.count)! >= 1 {
-                        // Partly solved
-                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = doneColor
-                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = startColor
-                    } else {
-                        // Nothing correct yet
-                        myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.black.cgColor
-                        myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = startColor
-                    }
-                } else {
-                    // Never solved a single one
-                    myButtons[sourceViewController.treeSelection! - 1].layer.borderColor = UIColor.black.cgColor
-                    myButtons[sourceViewController.treeSelection! - 1].layer.backgroundColor = startColor
-                }
+                checkProgress()
             }
         }
     }
 
+    // MARK: - Reset data
+    // MARK: reset all
     func resetAll() {
         resetData()
         resetTimes()
@@ -343,6 +314,7 @@ class ViewController: UIViewController {
         viewWillLayoutSubviews()
     }
     
+    // MARK: reset data
     func resetData() {
         var solvedDict: Dictionary<String, Any> = [:]
         var newArray: Array<Int> = []
@@ -363,6 +335,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: reset times
     func resetTimes() {
         var newTime: Float = 10000.0
         var timeKeeper: Dictionary<String, Any> = [:]
@@ -383,12 +356,42 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: reset scores
     func resetScores() {
         if localdata.object(forKey: "correctAnswers") != nil {
             localdata.set(0, forKey: "correctAnswers")
         }
         if localdata.object(forKey: "totalAnswers") != nil {
             localdata.set(0, forKey: "totalAnswers")
+        }
+    }
+    
+    // MARK: - ceck progress
+    func checkProgress() {
+        for button in myButtons {
+            let tree = Int(myButtons.index(of: button)!) + 1
+            // Load data
+            let storedDict = localdata.dictionary(forKey: "solvedNumbers")
+            if let solvedForTree = storedDict?[String(tree)] {
+                let solvedArray = solvedForTree as? Array<Int>
+                if (solvedArray?.count)! - 1 >= tree {
+                    // completely solved
+                    button.layer.backgroundColor = doneColor
+                    button.layer.borderColor = startColor
+                } else if (solvedArray?.count)! >= 1 {
+                    // partly solved
+                    button.layer.borderColor = doneColor
+                    button.layer.backgroundColor = startColor
+                } else {
+                    // Nothing solved
+                    button.layer.borderColor = UIColor.black.cgColor
+                    button.layer.backgroundColor = startColor
+                }
+            } else {
+                // Nothing ever solved
+                button.layer.borderColor = UIColor.black.cgColor
+                button.layer.backgroundColor = startColor
+            }
         }
     }
     // MARK: - Activity Indicator
@@ -564,11 +567,11 @@ class ViewController: UIViewController {
         answerField.resignFirstResponder()
     }
 
-    func calculateCountSolved() {
+    func calculateCountSolved() -> Int {
+        self.countSolved = 0
         // check if all trees up to ten have been solved
         let storedDict = localdata.dictionary(forKey: "solvedNumbers")
         let tenArray: Array<Int> = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-        
         for number in tenArray {
             if let solvedForTree = storedDict?[String(number)] {
                 let solvedArray = solvedForTree as? Array<Int>
@@ -578,6 +581,12 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
+        return self.countSolved
+    }
+    
+    func calculateSolvedTree() -> Array<Int> {
+        let storedDict = localdata.dictionary(forKey: "solvedNumbers")
         for number in allTreesArray {
             if let solvedForTree = storedDict?[String(number)] {
                 let solvedArray = solvedForTree as? Array<Int>
@@ -587,6 +596,26 @@ class ViewController: UIViewController {
                 }
             }
         }
+        return self.solvedTreeArray
+    }
+    func twoAndThree() -> Bool {
+        // If 2 and 3 solved : true
+        var countTwoThree: Int = 0
+        let storedDict = localdata.dictionary(forKey: "solvedNumbers")
+        let twoThreeArray: Array<Int> = [2, 3]
+        
+        for number in twoThreeArray {
+            if let solvedForTree = storedDict?[String(number)] {
+                let solvedArray = solvedForTree as? Array<Int>
+                if (solvedArray?.count)! - 1 >= number {
+                    countTwoThree += 1
+                }
+            }
+        }
+        if countTwoThree == 2 {
+            return true
+        }
+        return false
     }
 }
 

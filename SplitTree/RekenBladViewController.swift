@@ -30,6 +30,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var myLabelsLeft: [UILabel]!
     @IBOutlet weak var viewLeft: UIView!
     @IBOutlet weak var viewRight: UIView!
+    @IBOutlet weak var buttonStack: UIStackView!
     
     @IBOutlet var myTextFields: [UITextField]!
     @IBOutlet var sumLabels: [UILabel]!
@@ -106,7 +107,8 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         if countSolved != 9 {
             // Example data
             self.numberArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -118,13 +120,19 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         setupLayout()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(NSNotification.Name.UIKeyboardWillShow)
+        NotificationCenter.default.removeObserver(NSNotification.Name.UIKeyboardWillHide)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if countSolved != 9 {
             // show message
             self.sheetView.isUserInteractionEnabled = false
             let notAvailableAlert = UIAlertController(title: NSLocalizedString("Not available yet!", comment: ""), message: NSLocalizedString("Solve all trees up to 10 first.", comment: ""), preferredStyle: .alert)
-            let ok = UIAlertAction(title: "Back", style: .default, handler: {(_) in
+            let ok = UIAlertAction(title: NSLocalizedString("Back", comment: ""), style: .default, handler: {(_) in
                 self.performSegue(withIdentifier: "unwindToViewController", sender: self)})
             notAvailableAlert.addAction(ok)
             present(notAvailableAlert, animated: true, completion: nil)
@@ -139,6 +147,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         // calculate and show total score
         let a = localdata.integer(forKey: "correctAnswers")
         let b = localdata.integer(forKey: "totalAnswers")
@@ -160,9 +169,11 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         viewLeft.layer.borderColor = UIColor.black.cgColor
         viewLeft.layer.borderWidth = 2
         viewLeft.layer.cornerRadius = 10
+        viewLeft.backgroundColor = UIColor.FlatColor.Blue.BlueWhale
         viewRight.layer.borderColor = UIColor.black.cgColor
         viewRight.layer.borderWidth = 2
         viewRight.layer.cornerRadius = 10
+        viewRight.backgroundColor = UIColor.FlatColor.Blue.BlueWhale
         
         self.checkAnswersButton.isEnabled = true
         for button in myButtons {
@@ -172,16 +183,20 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         }
         
         for textfield in myTextFields {
+            textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             textfield.layer.borderColor = UIColor.black.cgColor
             textfield.layer.borderWidth = 2
-            textfield.layer.cornerRadius = 10
+            textfield.layer.cornerRadius = 5
             textfield.textColor = UIColor.FlatColor.Violet.BlueGem
+            textfield.minimumFontSize = 1
             textfield.layer.masksToBounds = true
             textfield.backgroundColor = UIColor.white
             textfield.isEnabled = true
             textfield.adjustsFontSizeToFitWidth = true
             textfield.allowsEditingTextAttributes = false
+            textfield.sizeToFit()            
         }
+        
         // Fill sums
         for (index, sumLabel) in sumLabels.enumerated() {
             let sum = shuffledSumArray[index]
@@ -200,9 +215,15 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         
         for label in myLabels {
             label.textAlignment = .center
+            label.textColor = UIColor.white
+            label.minimumScaleFactor = 0.1
+            label.sizeToFit()
         }
         for label in myLabelsLeft {
             label.textAlignment = .center
+            label.textColor = UIColor.white
+            label.minimumScaleFactor = 0.1
+            label.sizeToFit()
         }
         
     }
@@ -282,14 +303,34 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // go to next inputfield
         let nextTag = nextEmptyFieldTag(currentTag: textField.tag)
-        if nextTag == 0 {
-            textField.resignFirstResponder()
-        } else {
+        if nextTag != 0 {
             for tf in myTextFields {
                 tf.viewWithTag(nextTag)?.becomeFirstResponder()
             }
         }
         return true
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        // Check answer and go to next empty textfield
+        var correctAnswer: Int = 0
+        if textField.tag <= 8 {
+            let sum = shuffledSumArray[textField.tag - 1]
+            correctAnswer = sumsDict[sum]![1]
+        } else {
+            let sub = shuffledMinusArray[textField.tag - 9]
+            correctAnswer = minusDict[sub]![1]
+        }
+        if textField.text == String(correctAnswer) {
+            let nextTag = nextEmptyFieldTag(currentTag: textField.tag)
+            if nextTag != 0 {
+                for tf in myTextFields {
+                    tf.viewWithTag(nextTag)?.becomeFirstResponder()
+                }
+            } else {
+                self.checkAnswersButtonTapped(checkAnswersButton)
+            }
+        }
     }
     
     func nextEmptyFieldTag(currentTag: Int) -> Int {
@@ -305,5 +346,50 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
             }
         }
         return 0
+    }
+    
+    // MARK: allowed characters
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if action == #selector(copy(_:)) || action == #selector(paste(_:)) || action == #selector(cut(_:)) {
+            return false
+        }
+        
+        return super.canPerformAction(action, withSender: sender)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let realOrigin = self.checkAnswersButton.convert(checkAnswersButton.bounds, to: self.view)
+            print("frame height = \(self.view.frame.height)")
+            print("screen Height = \(screenHeight)")
+            print("realOrigin bounds = \(realOrigin)")
+            print("keyBoardHeight = \(keyboardSize.height)")
+            let bottomSpace = screenHeight - realOrigin.maxY
+            let overlap = keyboardSize.height + 44 - bottomSpace
+            print("bottomSpace = \(bottomSpace)")
+            print("overlap = \(overlap)")
+            
+            if bottomSpace < keyboardSize.height + 44 {
+                print("too high")
+                let diff = overlap + 8
+                print("difference = \(diff)")
+                self.view.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height - diff)
+                //self.view.layoutMargins = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height + diff, 0.0)
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    public var screenHeight: CGFloat {
+        return UIScreen.main.bounds.height
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        
     }
 }
