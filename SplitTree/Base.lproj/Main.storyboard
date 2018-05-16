@@ -23,11 +23,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcB-9d-lIi">
-                                <rect key="frame" x="8" y="20" width="44" height="55.5"/>
+                                <rect key="frame" x="8" y="20" width="64" height="55.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                </variation>
                                 <connections>
                                     <segue destination="SPV-TU-lKo" kind="unwind" identifier="unwindToViewController" unwindAction="unwindToOverviewWithSegue:" id="tOv-C4-WsF"/>
                                 </connections>
@@ -52,6 +59,9 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" preferredMaxLayoutWidth="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="b9W-oo-73u">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="65.5"/>
@@ -61,24 +71,36 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="lGD-Cs-fAK">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="UN0-Aj-upD">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="tW4-M6-Vs6">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -90,30 +112,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNv-wM-ndo">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-zy-OvQ">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otn-SP-Q3m">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56t-Te-6hZ">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -125,30 +162,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeX-RS-zO9">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="wOz-2U-h2Y">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISs-MF-Lm2">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjT-LY-sFE">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -160,30 +212,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPG-yH-D1D">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="66"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Guo-sT-GgG">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="66"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnP-BI-spc">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="66"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbI-V4-unI">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="66"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -195,30 +262,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sB4-24-5nx">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="OaJ-Hz-qcX">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC1-mn-5qn">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJB-tw-1Ja">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -230,30 +312,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-wU-UF6">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vym-hd-vb8">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-9G-9KQ">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZb-UA-9dj">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -265,30 +362,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKC-Yd-oGe">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="U8M-h4-TUI">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-kP-yy6">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpq-hq-hSj">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -300,30 +412,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6Z-Co-gC7">
                                                                         <rect key="frame" x="76.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dm1-2y-9tu">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq4-su-AzZ">
                                                                         <rect key="frame" x="230" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUw-G8-GG0">
                                                                         <rect key="frame" x="306.5" y="0.0" width="76.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -354,30 +481,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeP-ZJ-2Up">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJs-6S-Ssk">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1S-YC-tf5">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-uZ-NAe">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -389,30 +531,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6r-1F-XwI">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kym-OQ-2Ma">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-Su-mIi">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="J39-oB-qX8">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -424,30 +581,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyf-6h-afC">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNY-TH-zfV">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-rp-VsJ">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-ZJ-vXs">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -459,30 +631,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8v-bA-EFU">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="66"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhE-qO-U7M">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="66"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZ6-vo-GMf">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="66"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="WIS-mp-C9P">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="66"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -494,30 +681,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dud-Go-ydt">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShF-7k-Zfl">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dw6-0s-pts">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-w4-00F">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -529,30 +731,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO1-he-pmt">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c67-3o-iUK">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-N5-Xcg">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="EZs-00-InE">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -564,30 +781,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-CN-3IF">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzN-hw-L7D">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liA-n2-Wxd">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="FQG-v1-MvC">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -599,30 +831,45 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="med-WS-sUG">
                                                                         <rect key="frame" x="77" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnv-G2-hEF">
                                                                         <rect key="frame" x="154.5" y="0.0" width="74" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkI-UB-cqL">
                                                                         <rect key="frame" x="231.5" y="0.0" width="74.5" height="65.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <textField opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ng4-NZ-vDX">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                        <variation key="widthClass=regular">
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        </variation>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -656,34 +903,52 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FcT-GX-bji" userLabel="Button Stack View">
-                                <rect key="frame" x="271" y="694" width="292" height="56"/>
+                                <rect key="frame" x="243" y="694" width="348" height="56"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPm-iJ-6Q0">
-                                        <rect key="frame" x="0.0" y="0.0" width="59" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="56"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Clear"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        </variation>
                                         <connections>
                                             <action selector="clearButtonTapped:" destination="g2j-vQ-tvC" eventType="touchUpInside" id="lef-tZ-iGB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVp-Ya-rL7">
-                                        <rect key="frame" x="67" y="0.0" width="144" height="56"/>
+                                        <rect key="frame" x="76" y="0.0" width="176" height="56"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Check answers"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        </variation>
                                         <connections>
                                             <action selector="checkAnswersButtonTapped:" destination="g2j-vQ-tvC" eventType="touchUpInside" id="eQv-g4-Otu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-KU-4nO">
-                                        <rect key="frame" x="219" y="0.0" width="73" height="56"/>
+                                        <rect key="frame" x="260" y="0.0" width="88" height="56"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Shuffle"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        </variation>
                                         <connections>
                                             <action selector="shuffleButtonTapped:" destination="g2j-vQ-tvC" eventType="touchUpInside" id="DRu-jj-bBX"/>
                                         </connections>
@@ -691,10 +956,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-zC-fWN">
-                                <rect key="frame" x="776" y="25" width="42" height="55.5"/>
+                                <rect key="frame" x="758.5" y="25" width="59.5" height="55.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.092276923358440399" green="0.53630632162094116" blue="0.91473710536956787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -917,6 +1185,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue1" id="h5e-eI-NcK"/>
                                                         </connections>
@@ -932,12 +1203,15 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue2" id="sxg-vC-FQB"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmm-Td-tpQ">
-                                                        <rect key="frame" x="263" y="7.5" width="124" height="123"/>
+                                                        <rect key="frame" x="263" y="7" width="124" height="124"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Gmm-Td-tpQ" secondAttribute="height" multiplier="1:1" id="jgK-9P-lhr"/>
                                                         </constraints>
@@ -947,6 +1221,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue3" id="ulk-vs-ecM"/>
                                                         </connections>
@@ -962,6 +1239,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue4" id="XfA-KC-Ux3"/>
                                                         </connections>
@@ -977,6 +1257,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue5" id="kfN-1t-VEJ"/>
                                                         </connections>
@@ -997,6 +1280,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue6" id="6fr-kc-BkR"/>
                                                         </connections>
@@ -1012,6 +1298,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue7" id="CVP-cP-ckb"/>
                                                         </connections>
@@ -1027,6 +1316,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue8" id="n1r-Zx-pK4"/>
                                                         </connections>
@@ -1042,6 +1334,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue9" id="xbi-xK-ork"/>
                                                         </connections>
@@ -1057,6 +1352,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue10" id="GOj-4Z-BTA"/>
                                                         </connections>
@@ -1077,6 +1375,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue11" id="3So-UB-daf"/>
                                                         </connections>
@@ -1092,12 +1393,15 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue12" id="EFC-Fb-Vt6"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O59-YE-cOY">
-                                                        <rect key="frame" x="263" y="7.5" width="124" height="123"/>
+                                                        <rect key="frame" x="263" y="7" width="124" height="124"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="O59-YE-cOY" secondAttribute="height" multiplier="1:1" id="iV4-3y-lHF"/>
                                                         </constraints>
@@ -1107,6 +1411,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue13" id="JG3-l3-SIB"/>
                                                         </connections>
@@ -1122,6 +1429,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue14" id="EwK-5h-yMT"/>
                                                         </connections>
@@ -1137,6 +1447,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue15" id="aUv-lf-H1d"/>
                                                         </connections>
@@ -1158,7 +1471,7 @@
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <variation key="widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue16" id="sAy-qp-E51"/>
@@ -1176,14 +1489,14 @@
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <variation key="widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue17" id="Qkc-I3-DiU"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="18" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOV-e0-gVC">
-                                                        <rect key="frame" x="263" y="7.5" width="124" height="123"/>
+                                                        <rect key="frame" x="263" y="7" width="124" height="124"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="wOV-e0-gVC" secondAttribute="height" multiplier="1:1" id="mv7-Pi-HTg"/>
                                                         </constraints>
@@ -1194,7 +1507,7 @@
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <variation key="widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue18" id="Olb-9M-UGx"/>
@@ -1212,7 +1525,7 @@
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <variation key="widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue19" id="M5l-zx-4ms"/>
@@ -1230,7 +1543,7 @@
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <variation key="widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
                                                         <connections>
                                                             <segue destination="Pdo-kf-fdn" kind="show" identifier="Segue20" id="StD-d7-AhG"/>
@@ -1265,32 +1578,41 @@
                                 <variation key="heightClass=regular-widthClass=regular" preservesSuperviewLayoutMargins="YES"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eie-ys-VER">
-                                <rect key="frame" x="8" y="1036.5" width="132" height="55.5"/>
+                                <rect key="frame" x="8" y="1036.5" width="190" height="55.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Reset all trees"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="resetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1yW-PM-oZZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4r-ew-dem">
-                                <rect key="frame" x="716" y="1036.5" width="110" height="55.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="591" y="1036.5" width="235" height="55.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Restore purchase">
                                     <color key="titleColor" red="0.05532223494778777" green="0.17647309159996355" blue="0.2088932966321243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="restorePurchaseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yqz-vu-r41"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-5m-ZC3">
-                                <rect key="frame" x="679" y="1036.5" width="143" height="55.5"/>
+                                <rect key="frame" x="615" y="1036.5" width="207" height="55.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Unlock all trees"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="unlockTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPu-pD-Kvz"/>
                                 </connections>

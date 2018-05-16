@@ -109,6 +109,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.countSolved = 7
         if countSolved != 9 {
             // Example data
             self.numberArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -128,7 +129,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if countSolved != 9 {
+        if countSolved != 7 {
             // show message
             self.sheetView.isUserInteractionEnabled = false
             let notAvailableAlert = UIAlertController(title: NSLocalizedString("Not available yet!", comment: ""), message: NSLocalizedString("Solve all trees up to 10 first.", comment: ""), preferredStyle: .alert)
@@ -202,7 +203,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
             let sum = shuffledSumArray[index]
             sumLabel.text = String(sum)
             sumFirstLabels[index].text = String(sumsDict[sum]![0])
-            //mySumTextFields[index].text = String(sumsDict[sum]![1])
+            mySumTextFields[index].text = String(sumsDict[sum]![1])
         }
         
         // Fill subtractions
@@ -210,20 +211,20 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
             let sum = shuffledMinusArray[index]
             subLabel.text = String(sum)
             subSecondLabels[index].text = String(minusDict[sum]![0])
-            //mySubTextFields[index].text = String(minusDict[sum]![1])
+            mySubTextFields[index].text = String(minusDict[sum]![1])
         }
         
         for label in myLabels {
             label.textAlignment = .center
             label.textColor = UIColor.white
             label.minimumScaleFactor = 0.1
-            label.sizeToFit()
+            label.adjustsFontSizeToFitWidth = true            
         }
         for label in myLabelsLeft {
             label.textAlignment = .center
             label.textColor = UIColor.white
             label.minimumScaleFactor = 0.1
-            label.sizeToFit()
+            label.adjustsFontSizeToFitWidth = true
         }
         
     }
