@@ -12,7 +12,6 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - variables
     var treeSelection: Int?
-    var diff: CGFloat?
     var finished: Bool = false
     var numberArray: Array<Int> = [0]
     var solvedNumbers: Array<Int> = []
@@ -61,6 +60,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             textField.text = ""
             textField.backgroundColor = UIColor.white
             textField.isEnabled = true
+            textField.viewWithTag(1)?.becomeFirstResponder()
         }
     }
     
@@ -72,6 +72,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             textField.text = ""
             textField.backgroundColor = UIColor.white
             textField.isEnabled = true
+            textField.viewWithTag(1)?.becomeFirstResponder()
         }
     }
     
@@ -99,6 +100,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             textField.text = ""
             textField.backgroundColor = UIColor.white
             textField.isEnabled = true
+            textField.viewWithTag(1)?.becomeFirstResponder()
         }
     }
     
@@ -106,9 +108,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        print("viewDidLoad")
         let orientationvalue = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(orientationvalue, forKey: "orientation")
         AppDelegate.AppUtility.lockOrientation(.portrait)
@@ -120,13 +120,12 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         for mytextField in myTextFields {
             mytextField.delegate = self
         }
-        self.right1.becomeFirstResponder()
         setupLayout()
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        print("viewWillLayoutSubviews")
+//        print("viewWillLayoutSubviews")
         // show images of coconuts
         if self.treeSelection! <= 3 {
             if right1.isFirstResponder {
@@ -161,7 +160,10 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -171,7 +173,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     // MARK: - functions
     // MARK: setup layout
     func setupLayout() {
-        print("setupLayout")
+//        print("setupLayout")
         self.score = 0
         self.numberArray = [0]
         for button in myButtons {
@@ -179,33 +181,33 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             button.layer.cornerRadius = 10
         }
         for textfield in myTextFields {
-            
-            textfield.layer.borderWidth = 1
-            textfield.layer.borderColor = UIColor.black.cgColor
-            textfield.layer.cornerRadius = 5
-            textfield.isEnabled = true
-            
-            textfield.adjustsFontSizeToFitWidth = true
-            textfield.minimumFontSize = 1
-            textfield.isUserInteractionEnabled = true
-            textfield.allowsEditingTextAttributes = false
-            //textfield.sizeToFit()
- 
-            //textfield.addTarget(self, action: #selector(uiMenuViewControllerDidShowMenu), for: .allTouchEvents)
             textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-            
+            textfield.layer.borderColor = UIColor.black.cgColor
+            textfield.layer.borderWidth = 1
+            textfield.layer.cornerRadius = 5
+            textfield.textColor = UIColor.FlatColor.Violet.BlueGem
+            textfield.layer.masksToBounds = true
+            textfield.backgroundColor = UIColor.white
+            textfield.isEnabled = true
+            //textfield.adjustsFontSizeToFitWidth = true
+            //textfield.minimumFontSize = 1.0
+            //textfield.allowsEditingTextAttributes = false
         }
-        if !SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
+        if SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
             randomButton.isUserInteractionEnabled = true
             nextButton.isUserInteractionEnabled = true
         } else {
             randomButton.isUserInteractionEnabled = false
             nextButton.isUserInteractionEnabled = false
             randomButton.setImage(#imageLiteral(resourceName: "Black_Lock_NoEdge"), for: .normal)
+            randomButton.imageView?.contentMode = .scaleAspectFit
             nextButton.setImage(#imageLiteral(resourceName: "Black_Lock_NoEdge"), for: .normal)
+            nextButton.imageView?.contentMode = .scaleAspectFit
         }
         randomButton.isHidden = true
+        randomButton.titleLabel?.adjustsFontSizeToFitWidth = true
         nextButton.isHidden = true
+        nextButton.titleLabel?.adjustsFontSizeToFitWidth = true
         TimeStaticLabel.isHidden = true
         timeLabel.isHidden = true
         newRecordLabel.isHidden = true
@@ -217,7 +219,6 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             label.layer.borderColor = UIColor.black.cgColor
             label.layer.cornerRadius = 5
             label.layer.masksToBounds = true
-            //label.layer.maskedCorners = 5
         }
         treeLabel.layer.borderWidth = 1
         treeLabel.layer.borderColor = UIColor.black.cgColor
@@ -245,12 +246,12 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             self.runTimer()
         }
-        
+        self.right1.becomeFirstResponder()
     }
     
     @objc func uiMenuViewControllerDidShowMenu() {
         // textFieldShouldReturn not responding appropriate when using this!!!
-        print("uiMenuViewControllerDidShowMenu")
+//        print("uiMenuViewControllerDidShowMenu")
         let menuController = UIMenuController.shared
         menuController.setMenuVisible(false, animated: false)
         menuController.update()
@@ -397,13 +398,13 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Textfield Delegate
     // MARK: textfield becomes active
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("textFieldShouldBeginEditing")
+//        print("textFieldShouldBeginEditing")
         textField.isUserInteractionEnabled = true
         textField.isEnabled = true
         return true
     }
     @objc func textFieldDidChange(_ textField: UITextField) {
-        print("textFieldDidChange")
+//        print("textFieldDidChange")
         if self.treeSelection! >= 4 {
             switch textField {
             case right1:
@@ -447,7 +448,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkNextResponder(_ textField: UITextField) {
-        print("checkNextResponder")
+//        print("checkNextResponder")
         if self.treeSelection! >= 4 {
             switch textField {
             case right1:
@@ -589,10 +590,10 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     // MARK: keyboard return function
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // go to next inputfield
-        print("textFieldShouldReturn")
+//        print("textFieldShouldReturn")
         if self.treeSelection! >= 4 {
             let nextTag = nextEmptyFieldTag(currentTag: textField.tag)
-            print("nextTag = \(nextTag)")
+//            print("nextTag = \(nextTag)")
             if nextTag == 0 {
                 textField.resignFirstResponder()
             } else {
@@ -731,51 +732,5 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
             return false
         }
         return super.canPerformAction(action, withSender: sender)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let realOrigin = self.doneButton.convert(doneButton.bounds, to: self.view)
-            print("frame height = \(self.view.frame.height)")
-            print("screen Height = \(screenHeight)")
-            print("realOrigin bounds = \(realOrigin)")
-            print("keyBoardHeight = \(keyboardSize.height)")
-            let bottomSpace = screenHeight - realOrigin.maxY
-            let overlap = keyboardSize.height + 44 - bottomSpace
-            print("bottomSpace = \(bottomSpace)")
-            print("overlap = \(overlap)")
-            
-            if bottomSpace < keyboardSize.height + 44 {
-                print("too high")
-                diff = overlap + 8
-                print("difference = \(diff!)")
-                self.view.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height - diff!)
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    public var screenHeight: CGFloat {
-        return UIScreen.main.bounds.height
-    }
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let realOrigin = self.doneButton.convert(doneButton.bounds, to: self.view)
-            print("frame height = \(self.view.frame.height)")
-            print("screen Height = \(screenHeight)")
-            print("realOrigin bounds = \(realOrigin)")
-            print("keyBoardHeight = \(keyboardSize.height)")
-            let bottomSpace = screenHeight - realOrigin.maxY
-            let overlap = keyboardSize.height + 44 - bottomSpace
-            print("bottomSpace = \(bottomSpace)")
-            print("overlap = \(overlap)")
-            
-            if bottomSpace < keyboardSize.height + 44 {
-                print("too high")
-                diff = overlap + 8
-                print("difference = \(diff!)")
-                self.view.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height + diff!)
-                self.view.layoutIfNeeded()
-            }
-        }
     }
 }

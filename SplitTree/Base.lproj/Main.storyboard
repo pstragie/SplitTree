@@ -22,25 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcB-9d-lIi">
-                                <rect key="frame" x="8" y="20" width="64" height="55.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                </variation>
-                                <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="SPV-TU-lKo" kind="unwind" identifier="unwindToViewController" unwindAction="unwindToOverviewWithSegue:" id="tOv-C4-WsF"/>
-                                </connections>
-                            </button>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-Sf-yFY" userLabel="sheetView">
-                                <rect key="frame" x="8" y="85.5" width="818" height="600.5"/>
+                                <rect key="frame" x="8" y="90.5" width="818" height="600.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-Xk-FNL">
                                         <rect key="frame" x="12" y="8" width="794" height="584.5"/>
@@ -75,7 +58,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="lGD-Cs-fAK">
+                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="lGD-Cs-fAK">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -125,7 +108,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-zy-OvQ">
+                                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-zy-OvQ">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -175,7 +158,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="wOz-2U-h2Y">
+                                                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="wOz-2U-h2Y">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -225,7 +208,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Guo-sT-GgG">
+                                                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="Guo-sT-GgG">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="66"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -275,7 +258,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="OaJ-Hz-qcX">
+                                                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="OaJ-Hz-qcX">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -325,7 +308,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vym-hd-vb8">
+                                                                    <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="vym-hd-vb8">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -375,7 +358,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="U8M-h4-TUI">
+                                                                    <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="U8M-h4-TUI">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -425,7 +408,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dm1-2y-9tu">
+                                                                    <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="dm1-2y-9tu">
                                                                         <rect key="frame" x="153" y="0.0" width="77" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -512,7 +495,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-uZ-NAe">
+                                                                    <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-uZ-NAe">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -562,7 +545,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="J39-oB-qX8">
+                                                                    <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="J39-oB-qX8">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -612,7 +595,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-ZJ-vXs">
+                                                                    <textField opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-ZJ-vXs">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -662,7 +645,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="WIS-mp-C9P">
+                                                                    <textField opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="WIS-mp-C9P">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="66"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -712,7 +695,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-w4-00F">
+                                                                    <textField opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-w4-00F">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -762,7 +745,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="EZs-00-InE">
+                                                                    <textField opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="EZs-00-InE">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -812,7 +795,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="FQG-v1-MvC">
+                                                                    <textField opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="FQG-v1-MvC">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -862,7 +845,7 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         </variation>
                                                                     </label>
-                                                                    <textField opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ng4-NZ-vDX">
+                                                                    <textField opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ng4-NZ-vDX">
                                                                         <rect key="frame" x="309" y="0.0" width="74" height="65.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -902,11 +885,26 @@
                                     </constraint>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcB-9d-lIi">
+                                <rect key="frame" x="8" y="25" width="64" height="55.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="Back"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="SPV-TU-lKo" kind="unwind" identifier="unwindToViewController" unwindAction="unwindToOverviewWithSegue:" id="tOv-C4-WsF"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FcT-GX-bji" userLabel="Button Stack View">
-                                <rect key="frame" x="243" y="694" width="348" height="56"/>
+                                <rect key="frame" x="243" y="699" width="348" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPm-iJ-6Q0">
-                                        <rect key="frame" x="0.0" y="0.0" width="68" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -922,7 +920,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVp-Ya-rL7">
-                                        <rect key="frame" x="76" y="0.0" width="176" height="56"/>
+                                        <rect key="frame" x="76" y="0.0" width="176" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -938,7 +936,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-KU-4nO">
-                                        <rect key="frame" x="260" y="0.0" width="88" height="56"/>
+                                        <rect key="frame" x="260" y="0.0" width="88" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -968,35 +966,31 @@
                         <color key="backgroundColor" red="0.092276923358440399" green="0.53630632162094116" blue="0.91473710536956787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="FcT-GX-bji" firstAttribute="height" secondItem="BrN-HJ-rcm" secondAttribute="height" multiplier="0.05" id="1ow-ma-Nmx"/>
                             <constraint firstItem="lcB-9d-lIi" firstAttribute="height" secondItem="BrN-HJ-rcm" secondAttribute="height" multiplier="0.05" id="6Io-Cq-KbL"/>
                             <constraint firstItem="FcT-GX-bji" firstAttribute="top" secondItem="8bb-Sf-yFY" secondAttribute="bottom" constant="8" id="Ae3-C1-9TS"/>
                             <constraint firstItem="RcT-zC-fWN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BrN-HJ-rcm" secondAttribute="leading" constant="20" symbolic="YES" id="EiL-zP-iDy"/>
                             <constraint firstItem="Vfc-ms-wPo" firstAttribute="trailing" secondItem="RcT-zC-fWN" secondAttribute="trailing" constant="16" id="Epq-ay-eon"/>
                             <constraint firstItem="lcB-9d-lIi" firstAttribute="leading" secondItem="BrN-HJ-rcm" secondAttribute="leading" constant="8" id="GEj-np-vNL"/>
                             <constraint firstItem="Vfc-ms-wPo" firstAttribute="trailing" secondItem="8bb-Sf-yFY" secondAttribute="trailing" constant="8" id="KMQ-61-OkW"/>
+                            <constraint firstItem="Vfc-ms-wPo" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FcT-GX-bji" secondAttribute="bottom" constant="234" id="Mn7-gb-Mai"/>
                             <constraint firstItem="8bb-Sf-yFY" firstAttribute="top" secondItem="lcB-9d-lIi" secondAttribute="bottom" constant="10" id="OK0-DT-i9h"/>
                             <constraint firstItem="FcT-GX-bji" firstAttribute="centerX" secondItem="BrN-HJ-rcm" secondAttribute="centerX" id="Wfd-v6-Eqe"/>
-                            <constraint firstItem="8bb-Sf-yFY" firstAttribute="height" secondItem="Vfc-ms-wPo" secondAttribute="height" multiplier="0.55" id="aR5-xY-GuS"/>
                             <constraint firstItem="RcT-zC-fWN" firstAttribute="top" secondItem="Vfc-ms-wPo" secondAttribute="top" constant="5" id="b72-qu-P7n"/>
                             <constraint firstItem="Vfc-ms-wPo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lcB-9d-lIi" secondAttribute="trailing" id="hvR-rU-k7z"/>
                             <constraint firstItem="8bb-Sf-yFY" firstAttribute="leading" secondItem="Vfc-ms-wPo" secondAttribute="leading" constant="8" id="oFD-Sw-nYC"/>
                             <constraint firstItem="RcT-zC-fWN" firstAttribute="height" secondItem="BrN-HJ-rcm" secondAttribute="height" multiplier="0.05" id="rCR-dz-NAH"/>
-                            <constraint firstItem="lcB-9d-lIi" firstAttribute="top" secondItem="Vfc-ms-wPo" secondAttribute="top" id="xbp-Wa-1OB"/>
+                            <constraint firstItem="lcB-9d-lIi" firstAttribute="top" secondItem="Vfc-ms-wPo" secondAttribute="top" constant="5" id="xbp-Wa-1OB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vfc-ms-wPo"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="lcB-9d-lIi" id="spq-1W-flQ"/>
+                        <outlet property="buttonStack" destination="FcT-GX-bji" id="0ES-dL-6Dg"/>
                         <outlet property="checkAnswersButton" destination="IVp-Ya-rL7" id="FCA-4n-Xuh"/>
                         <outlet property="scoreLabel" destination="RcT-zC-fWN" id="JZ7-a8-YJY"/>
                         <outlet property="sheetView" destination="8bb-Sf-yFY" id="nxS-ld-0RK"/>
                         <outlet property="viewLeft" destination="2EK-Uv-iZt" id="dVt-lR-wsH"/>
                         <outlet property="viewRight" destination="26W-Zx-aqq" id="DIq-K8-mOL"/>
-                        <outletCollection property="myButtons" destination="lcB-9d-lIi" collectionClass="NSMutableArray" id="1Pq-VN-wEA"/>
-                        <outletCollection property="myButtons" destination="IVp-Ya-rL7" collectionClass="NSMutableArray" id="8xP-z8-TX8"/>
-                        <outletCollection property="myButtons" destination="RPm-iJ-6Q0" collectionClass="NSMutableArray" id="sd1-uE-Fv3"/>
-                        <outletCollection property="myButtons" destination="zWk-KU-4nO" collectionClass="NSMutableArray" id="YeY-Oa-sZe"/>
                         <outletCollection property="mySumTextFields" destination="BTd-zy-OvQ" collectionClass="NSMutableArray" id="BjD-62-81F"/>
                         <outletCollection property="myLabels" destination="Kq4-su-AzZ" collectionClass="NSMutableArray" id="THc-vy-jNt"/>
                         <outletCollection property="sumFirstLabels" destination="C9g-B5-Yh1" collectionClass="NSMutableArray" id="Atd-PC-37A"/>
@@ -1127,6 +1121,10 @@
                         <outletCollection property="myLabelsLeft" destination="MFh-N5-Xcg" collectionClass="NSMutableArray" id="JMP-ta-Nfv"/>
                         <outletCollection property="myTextFields" destination="Us1-ZJ-vXs" collectionClass="NSMutableArray" id="scp-rn-1Fn"/>
                         <outletCollection property="myLabelsLeft" destination="cO1-he-pmt" collectionClass="NSMutableArray" id="ebm-cv-aWo"/>
+                        <outletCollection property="myButtons" destination="RPm-iJ-6Q0" collectionClass="NSMutableArray" id="Mre-uh-czj"/>
+                        <outletCollection property="myButtons" destination="IVp-Ya-rL7" collectionClass="NSMutableArray" id="3VN-NC-e7f"/>
+                        <outletCollection property="myButtons" destination="zWk-KU-4nO" collectionClass="NSMutableArray" id="dF1-QN-40B"/>
+                        <outletCollection property="myButtons" destination="lcB-9d-lIi" collectionClass="NSMutableArray" id="O0t-1u-oFy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r7-vi-1eZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1178,13 +1176,16 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="pZk-4e-Xu6" secondAttribute="height" multiplier="1:1" id="3yn-Cr-hzS"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="R">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1197,12 +1198,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="CNc-a9-axL" secondAttribute="height" multiplier="1:1" id="C7M-kO-5oB"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="2">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1215,12 +1219,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Gmm-Td-tpQ" secondAttribute="height" multiplier="1:1" id="jgK-9P-lhr"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="3">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1233,12 +1240,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="HFj-NA-pfA" secondAttribute="height" multiplier="1:1" id="wue-xi-qfn"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="4">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1251,12 +1261,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="4a0-CY-2J3" secondAttribute="height" multiplier="1:1" id="RgW-C2-G1r"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="5">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1274,12 +1287,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="5N8-60-pvg" secondAttribute="height" multiplier="1:1" id="cG9-cC-nZq"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="6">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1292,12 +1308,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="5Rp-oU-oeV" secondAttribute="height" multiplier="1:1" id="oMO-Um-OW5"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="7">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1310,12 +1329,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="uXu-Oy-yWf" secondAttribute="height" multiplier="1:1" id="WPG-I1-Ayo"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="8">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1328,12 +1350,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="cNW-Ed-Vma" secondAttribute="height" multiplier="1:1" id="l11-Ad-Fnp"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="9">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1346,12 +1371,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Osd-jD-Qzg" secondAttribute="height" multiplier="1:1" id="J8d-ej-PG1"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="10">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1369,12 +1397,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="k9I-9x-2SF" secondAttribute="height" multiplier="1:1" id="o0h-bb-ejI"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="11">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1387,12 +1418,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="QSR-i7-6ct" secondAttribute="height" multiplier="1:1" id="sn7-Ba-CY5"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="12">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1405,12 +1439,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="O59-YE-cOY" secondAttribute="height" multiplier="1:1" id="iV4-3y-lHF"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="13">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1423,12 +1460,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Yz9-La-DU8" secondAttribute="height" multiplier="1:1" id="6bI-nP-cFs"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="14">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1441,12 +1481,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="wJY-hc-uAs" secondAttribute="height" multiplier="1:1" id="gkn-Pg-aic"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="15">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1464,12 +1507,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Xil-1z-C1k" secondAttribute="height" multiplier="1:1" id="11m-7S-Hs9"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="16">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1482,12 +1528,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="eqb-NI-c06" secondAttribute="height" multiplier="1:1" id="EEd-XJ-QaT"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="17">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1500,12 +1549,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="wOV-e0-gVC" secondAttribute="height" multiplier="1:1" id="mv7-Pi-HTg"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="18">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1518,12 +1570,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ZG7-TV-w97" secondAttribute="height" multiplier="1:1" id="haO-Jg-dhM"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="19">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1536,12 +1591,15 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="58S-S4-HRH" secondAttribute="height" multiplier="1:1" id="NGg-X7-8sT"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="1"/>
                                                         <state key="normal" title="20">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <variation key="widthClass=compact">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        </variation>
                                                         <variation key="widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         </variation>
@@ -1580,7 +1638,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eie-ys-VER">
                                 <rect key="frame" x="8" y="1036.5" width="190" height="55.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Reset all trees"/>
                                 <variation key="widthClass=regular">
@@ -1592,7 +1650,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4r-ew-dem">
                                 <rect key="frame" x="591" y="1036.5" width="235" height="55.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Restore purchase">
                                     <color key="titleColor" red="0.05532223494778777" green="0.17647309159996355" blue="0.2088932966321243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1607,7 +1665,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-5m-ZC3">
                                 <rect key="frame" x="615" y="1036.5" width="207" height="55.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Unlock all trees"/>
                                 <variation key="widthClass=regular">
@@ -1620,7 +1678,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXc-zu-HRC">
                                 <rect key="frame" x="320" y="860" width="194" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Practice sheet"/>
                                 <variation key="widthClass=regular">
@@ -1748,7 +1806,7 @@
                                 <viewLayoutGuide key="safeArea" id="AcU-A6-CX0"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tree" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Zxu-Km-t6J">
-                                <rect key="frame" x="377.5" y="99.5" width="79" height="79"/>
+                                <rect key="frame" x="379" y="101" width="76.5" height="76.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zxu-Km-t6J" secondAttribute="height" multiplier="1:1" identifier="treeLabelAspect" id="jdS-Ar-9Ra"/>
@@ -1758,7 +1816,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCG-Ml-dKO">
-                                <rect key="frame" x="28" y="28" width="64" height="55.5"/>
+                                <rect key="frame" x="8" y="28" width="64" height="55.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <state key="normal" title="Back">
@@ -1775,7 +1833,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lLV-rN-G9f">
-                                <rect key="frame" x="60" y="734" width="67.5" height="42"/>
+                                <rect key="frame" x="60" y="672" width="67.5" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1787,7 +1845,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ogq-x8-q2Y">
-                                <rect key="frame" x="135.5" y="734" width="60" height="42"/>
+                                <rect key="frame" x="135.5" y="672" width="60" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" identifier="timeLabelHeight" id="hpD-RI-bOZ"/>
                                 </constraints>
@@ -1802,7 +1860,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New record!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZIl-WU-zyH">
-                                <rect key="frame" x="60" y="784" width="146" height="42"/>
+                                <rect key="frame" x="60" y="718" width="146" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1814,10 +1872,10 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dfy-OI-L35" userLabel="Button Stack View">
-                                <rect key="frame" x="242.5" y="596" width="349" height="44"/>
+                                <rect key="frame" x="242.5" y="576.5" width="349" height="55.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6E-Uk-qwg">
-                                        <rect key="frame" x="0.0" y="0.0" width="111" height="44"/>
+                                        <rect key="frame" x="0.0" y="6" width="111" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -1836,7 +1894,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efR-O5-bA5" userLabel="Again Button">
-                                        <rect key="frame" x="119" y="0.0" width="111" height="44"/>
+                                        <rect key="frame" x="119" y="6" width="111" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -1855,7 +1913,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbP-fz-N4Q">
-                                        <rect key="frame" x="238" y="0.0" width="111" height="44"/>
+                                        <rect key="frame" x="238" y="6" width="111" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -1874,9 +1932,13 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="c6E-Uk-qwg" firstAttribute="height" secondItem="efR-O5-bA5" secondAttribute="height" id="JNU-Er-mju"/>
+                                    <constraint firstItem="jbP-fz-N4Q" firstAttribute="height" secondItem="efR-O5-bA5" secondAttribute="height" id="i5Y-hf-8yt"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxW-6B-62h">
-                                <rect key="frame" x="379.5" y="596" width="75" height="44"/>
+                                <rect key="frame" x="379.5" y="582" width="75" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -1895,13 +1957,13 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iTN-JH-efl" userLabel="Hor Stack View">
-                                <rect key="frame" x="338" y="198.5" width="158" height="377.5"/>
+                                <rect key="frame" x="340.5" y="197.5" width="153" height="364.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GMS-Qf-W4N" userLabel="Ver Left Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="377.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="364.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="efS-Qp-ECo">
-                                                <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="66.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1911,30 +1973,30 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qy1-jH-W8h">
-                                                <rect key="frame" x="0.0" y="77" width="69" height="69"/>
+                                            <textField opaque="NO" tag="2" contentMode="center" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qy1-jH-W8h">
+                                                <rect key="frame" x="0.0" y="74.5" width="66.5" height="66.5"/>
                                                 <color key="textColor" red="0.65539645259795953" green="0.119702997014418" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                 <connections>
                                                     <action selector="textField1Tapped:" destination="Pdo-kf-fdn" eventType="touchUpInside" id="JJO-A9-EBb"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="plP-BJ-OxB">
-                                                <rect key="frame" x="0.0" y="154" width="69" height="69.5"/>
+                                                <rect key="frame" x="0.0" y="149" width="66.5" height="66.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="TVr-Ux-maQ">
-                                                <rect key="frame" x="0.0" y="231.5" width="69" height="69"/>
+                                            <textField opaque="NO" tag="4" contentMode="center" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="TVr-Ux-maQ">
+                                                <rect key="frame" x="0.0" y="223.5" width="66.5" height="66.5"/>
                                                 <color key="textColor" red="0.65539645259795953" green="0.119702997014418" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="AYb-QK-5wF">
-                                                <rect key="frame" x="0.0" y="308.5" width="69" height="69"/>
+                                                <rect key="frame" x="0.0" y="298" width="66.5" height="66.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
@@ -1943,59 +2005,62 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-zi-L3x" userLabel="Ver Right Stack View">
-                                        <rect key="frame" x="89" y="0.0" width="69" height="377.5"/>
+                                        <rect key="frame" x="86.5" y="0.0" width="66.5" height="364.5"/>
                                         <subviews>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="IyH-nz-0uF">
-                                                <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="IyH-nz-0uF" secondAttribute="height" multiplier="1:1" identifier="Right1Aspect" id="7x0-xk-GI7"/>
-                                                </constraints>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="IyH-nz-0uF">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="66.5"/>
                                                 <color key="textColor" red="0.65539645259795953" green="0.119702997014418" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="eBP-44-45b">
-                                                <rect key="frame" x="0.0" y="77" width="69" height="69"/>
+                                                <rect key="frame" x="0.0" y="74.5" width="66.5" height="66.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="TMv-vp-TLS">
-                                                <rect key="frame" x="0.0" y="154" width="69" height="69.5"/>
+                                            <textField opaque="NO" tag="3" contentMode="center" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="TMv-vp-TLS">
+                                                <rect key="frame" x="0.0" y="149" width="66.5" height="66.5"/>
                                                 <color key="textColor" red="0.65539645259795953" green="0.119702997014418" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="rOy-V8-uV0">
-                                                <rect key="frame" x="0.0" y="231.5" width="69" height="69"/>
+                                                <rect key="frame" x="0.0" y="223.5" width="66.5" height="66.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="5" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="LKY-nv-ieZ">
-                                                <rect key="frame" x="0.0" y="308.5" width="69" height="69"/>
+                                            <textField opaque="NO" tag="5" contentMode="center" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="LKY-nv-ieZ">
+                                                <rect key="frame" x="0.0" y="298" width="66.5" height="66.5"/>
                                                 <color key="textColor" red="0.65539645259795953" green="0.119702997014418" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="eBP-44-45b" firstAttribute="width" secondItem="efS-Qp-ECo" secondAttribute="width" id="Q35-xw-uFX"/>
+                                    <constraint firstItem="eBP-44-45b" firstAttribute="height" secondItem="efS-Qp-ECo" secondAttribute="height" id="XF3-7B-Hul"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.092276923358440399" green="0.53630632162094116" blue="0.91473710536956787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hCG-Ml-dKO" firstAttribute="top" secondItem="zHO-oS-AJF" secondAttribute="top" constant="8" identifier="backButtonTop_safeAreaTop" id="06R-et-JKI"/>
+                            <constraint firstItem="lLV-rN-G9f" firstAttribute="top" secondItem="dfy-OI-L35" secondAttribute="bottom" constant="40" id="1FW-hi-e3H"/>
                             <constraint firstItem="lLV-rN-G9f" firstAttribute="height" secondItem="ogq-x8-q2Y" secondAttribute="height" identifier="TimeStaticLabelHeight" id="7zv-fO-bDA"/>
                             <constraint firstItem="zHO-oS-AJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ogq-x8-q2Y" secondAttribute="trailing" symbolic="YES" identifier="safeAreaTrailing_timeLabelTrailing" id="8M9-dD-vvs"/>
                             <constraint firstItem="iTN-JH-efl" firstAttribute="top" secondItem="Zxu-Km-t6J" secondAttribute="bottom" constant="20" identifier="horStackView_treeLabelBottom" id="AhN-Nd-h9N"/>
                             <constraint firstItem="ogq-x8-q2Y" firstAttribute="top" secondItem="lLV-rN-G9f" secondAttribute="top" identifier="timeLabelTop" id="Bfx-XH-FWd"/>
                             <constraint firstItem="ogq-x8-q2Y" firstAttribute="leading" secondItem="lLV-rN-G9f" secondAttribute="trailing" constant="8" identifier="timeLabelLeading" id="Egq-Ql-QSY"/>
+                            <constraint firstItem="dfy-OI-L35" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zHO-oS-AJF" secondAttribute="leading" constant="8" id="L2B-cy-JHt"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZIl-WU-zyH" secondAttribute="trailing" identifier="newRecordLabelTrailing" id="M4e-Hw-NfE"/>
-                            <constraint firstItem="lLV-rN-G9f" firstAttribute="top" secondItem="zHO-oS-AJF" secondAttribute="bottom" multiplier="0.66" identifier="TimeStaticLabelTop" id="MJw-38-EPi"/>
-                            <constraint firstItem="dfy-OI-L35" firstAttribute="top" secondItem="lxW-6B-62h" secondAttribute="top" identifier="buttonStackViewTop_Equals_DoneButtonTop" id="QWu-t9-m3e"/>
+                            <constraint firstItem="zHO-oS-AJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dfy-OI-L35" secondAttribute="trailing" constant="8" id="OTl-Wd-vGz"/>
+                            <constraint firstItem="dfy-OI-L35" firstAttribute="centerY" secondItem="lxW-6B-62h" secondAttribute="centerY" identifier="buttonStackViewTop_Equals_DoneButtonTop" id="QWu-t9-m3e"/>
                             <constraint firstItem="lxW-6B-62h" firstAttribute="top" secondItem="iTN-JH-efl" secondAttribute="bottom" priority="999" constant="20" identifier="doneButtonTop_horstackViewBottom" id="ToF-Ar-Qd5"/>
                             <constraint firstItem="ZIl-WU-zyH" firstAttribute="leading" secondItem="lLV-rN-G9f" secondAttribute="leading" identifier="newRecordLabelLeading" id="Tqi-Mn-Uvq"/>
                             <constraint firstItem="lxW-6B-62h" firstAttribute="centerX" secondItem="zHO-oS-AJF" secondAttribute="centerX" identifier="doneButtonCenter" id="Vfs-vA-cef"/>
@@ -2003,14 +2068,15 @@
                             <constraint firstItem="hCG-Ml-dKO" firstAttribute="height" secondItem="cDC-gt-Nen" secondAttribute="height" multiplier="0.05" id="afs-1l-AR7"/>
                             <constraint firstItem="Zxu-Km-t6J" firstAttribute="centerY" secondItem="cDC-gt-Nen" secondAttribute="centerY" multiplier="0.25" identifier="treeLabeCenter" id="c2g-8r-ThK"/>
                             <constraint firstItem="dfy-OI-L35" firstAttribute="centerX" secondItem="zHO-oS-AJF" secondAttribute="centerX" identifier="buttonStackViewCenter_safeAreaCenter" id="ctG-sl-zcb"/>
-                            <constraint firstItem="hCG-Ml-dKO" firstAttribute="leading" secondItem="cDC-gt-Nen" secondAttribute="leadingMargin" constant="8" identifier="backButtonLeading_superviewLeadingMargin" id="hcg-Q8-Uev"/>
-                            <constraint firstItem="lxW-6B-62h" firstAttribute="top" secondItem="cDC-gt-Nen" secondAttribute="centerY" constant="40" identifier="doneButtonTop" id="oVL-JL-pfv"/>
+                            <constraint firstItem="hCG-Ml-dKO" firstAttribute="leading" secondItem="cDC-gt-Nen" secondAttribute="leading" constant="8" identifier="backButtonLeading_superviewLeadingMargin" id="hcg-Q8-Uev"/>
                             <constraint firstItem="zHO-oS-AJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hCG-Ml-dKO" secondAttribute="trailingMargin" identifier="safeAreaTrailing_backButtonTrailing" id="qIv-Xl-g0L"/>
                             <constraint firstItem="iTN-JH-efl" firstAttribute="centerX" secondItem="zHO-oS-AJF" secondAttribute="centerX" identifier="horStackViewCenter_safeAreaCenter" id="qyl-Ol-Wyd"/>
                             <constraint firstItem="Zxu-Km-t6J" firstAttribute="width" secondItem="iTN-JH-efl" secondAttribute="width" multiplier="0.5" identifier="treeLabelWidth_horStackWidth" id="t2c-oR-oS1"/>
+                            <constraint firstItem="dfy-OI-L35" firstAttribute="height" secondItem="cDC-gt-Nen" secondAttribute="height" multiplier="0.05" id="u8f-bc-4yz"/>
                             <constraint firstItem="lLV-rN-G9f" firstAttribute="leading" secondItem="cDC-gt-Nen" secondAttribute="leadingMargin" constant="40" identifier="TimeStaticLabelLeading" id="wBy-U7-yo8"/>
-                            <constraint firstItem="ZIl-WU-zyH" firstAttribute="top" secondItem="lLV-rN-G9f" secondAttribute="bottom" constant="8" identifier="newRecordLabelTop" id="xHb-qe-IHX"/>
+                            <constraint firstItem="ZIl-WU-zyH" firstAttribute="top" secondItem="lLV-rN-G9f" secondAttribute="bottom" constant="4" identifier="newRecordLabelTop" id="xHb-qe-IHX"/>
                             <constraint firstItem="Zxu-Km-t6J" firstAttribute="centerX" secondItem="zHO-oS-AJF" secondAttribute="centerX" identifier="treeLabelCenter_safeAreaCenter" id="xmm-78-Dwb"/>
+                            <constraint firstItem="zHO-oS-AJF" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lxW-6B-62h" secondAttribute="bottom" constant="218" id="y1B-l5-3CF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zHO-oS-AJF"/>
                     </view>

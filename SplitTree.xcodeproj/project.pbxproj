@@ -25,21 +25,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B6A64AE720A4AFB800C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		B627EE8C20AC6CDC004FB357 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B627EE8E20AC6D0D004FB357 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		B627EE9020AC6D1F004FB357 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		B627EE9220AC6D2F004FB357 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		B627EE9420AC6D40004FB357 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		B6A64AE820A4AFB900C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B6A64AE920A4AFBA00C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6A64AEA20A4AFBB00C1C508 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B6A64AEB20A4AFC500C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		B6A64AEC20A4AFC600C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B6A64AED20A4AFC700C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6A64AEE20A4AFC800C1C508 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B6A64AEF20A4AFD100C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		B6A64AF020A4AFD100C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B6A64AF120A4AFD200C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6A64AF220A4AFD300C1C508 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B6BFC51020A6FE7E00D80521 /* RekenBladViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RekenBladViewController.swift; sourceTree = "<group>"; };
-		B6BFC51220A86C2D00D80521 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
-		B6BFC51420A9A27F00D80521 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F58780B4209B3E4B0044157B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		F58780B6209B3EED0044157B /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
 		F58780B9209D2DD00044157B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -248,11 +248,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				F5DB50DE2093AF6C008AA70F /* Base */,
-				B6A64AE720A4AFB800C1C508 /* fr */,
-				B6A64AEB20A4AFC500C1C508 /* de */,
-				B6A64AEF20A4AFD100C1C508 /* it */,
-				B6BFC51220A86C2D00D80521 /* nl */,
-				B6BFC51420A9A27F00D80521 /* en */,
+				B627EE8C20AC6CDC004FB357 /* en */,
+				B627EE8E20AC6D0D004FB357 /* nl */,
+				B627EE9020AC6D1F004FB357 /* fr */,
+				B627EE9220AC6D2F004FB357 /* de */,
+				B627EE9420AC6D40004FB357 /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -393,8 +393,10 @@
 				INFOPLIST_FILE = SplitTree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-Onone";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PWS-apps.SplitTree";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

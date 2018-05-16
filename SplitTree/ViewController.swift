@@ -214,8 +214,10 @@ class ViewController: UIViewController {
         checkProgress()
         if twoAndThree() {
             rekenbladButton.isEnabled = true
+            rekenbladButton.backgroundColor = UIColor.init(white: 1, alpha: 1)
         } else {
             rekenbladButton.isEnabled = false
+            rekenbladButton.backgroundColor = UIColor.init(white: 1, alpha: 0.8)
         }
     }
     

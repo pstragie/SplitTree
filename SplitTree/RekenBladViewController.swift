@@ -25,13 +25,12 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var vertStacks: [UIStackView]!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var sheetView: UIView!
-    @IBOutlet var myButtons: [UIButton]!
     @IBOutlet var myLabels: [UILabel]!
     @IBOutlet var myLabelsLeft: [UILabel]!
     @IBOutlet weak var viewLeft: UIView!
     @IBOutlet weak var viewRight: UIView!
     @IBOutlet weak var buttonStack: UIStackView!
-    
+    @IBOutlet var myButtons: [UIButton]!
     @IBOutlet var myTextFields: [UITextField]!
     @IBOutlet var sumLabels: [UILabel]!
     @IBOutlet var subtractionLabels: [UILabel]!
@@ -107,9 +106,9 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        self.countSolved = 7
+        let orientationvalue = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(orientationvalue, forKey: "orientation")
+        AppDelegate.AppUtility.lockOrientation(.portrait)
         if countSolved != 9 {
             // Example data
             self.numberArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -123,13 +122,11 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(NSNotification.Name.UIKeyboardWillShow)
-        NotificationCenter.default.removeObserver(NSNotification.Name.UIKeyboardWillHide)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if countSolved != 7 {
+        if countSolved != 9 {
             // show message
             self.sheetView.isUserInteractionEnabled = false
             let notAvailableAlert = UIAlertController(title: NSLocalizedString("Not available yet!", comment: ""), message: NSLocalizedString("Solve all trees up to 10 first.", comment: ""), preferredStyle: .alert)
@@ -181,21 +178,21 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
             button.layer.borderWidth = 2
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.cornerRadius = 10
+            button.backgroundColor = UIColor.white
         }
         
         for textfield in myTextFields {
             textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             textfield.layer.borderColor = UIColor.black.cgColor
-            textfield.layer.borderWidth = 2
+            textfield.layer.borderWidth = 1
             textfield.layer.cornerRadius = 5
             textfield.textColor = UIColor.FlatColor.Violet.BlueGem
-            textfield.minimumFontSize = 1
             textfield.layer.masksToBounds = true
             textfield.backgroundColor = UIColor.white
             textfield.isEnabled = true
             textfield.adjustsFontSizeToFitWidth = true
+            textfield.minimumFontSize = 1.0
             textfield.allowsEditingTextAttributes = false
-            textfield.sizeToFit()            
         }
         
         // Fill sums
@@ -203,7 +200,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
             let sum = shuffledSumArray[index]
             sumLabel.text = String(sum)
             sumFirstLabels[index].text = String(sumsDict[sum]![0])
-            mySumTextFields[index].text = String(sumsDict[sum]![1])
+            //mySumTextFields[index].text = String(sumsDict[sum]![1])
         }
         
         // Fill subtractions
@@ -211,7 +208,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
             let sum = shuffledMinusArray[index]
             subLabel.text = String(sum)
             subSecondLabels[index].text = String(minusDict[sum]![0])
-            mySubTextFields[index].text = String(minusDict[sum]![1])
+            //mySubTextFields[index].text = String(minusDict[sum]![1])
         }
         
         for label in myLabels {
@@ -328,9 +325,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
                 for tf in myTextFields {
                     tf.viewWithTag(nextTag)?.becomeFirstResponder()
                 }
-            } else {
-                self.checkAnswersButtonTapped(checkAnswersButton)
-            }
+            } 
         }
     }
     
@@ -363,34 +358,5 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         }
         
         return super.canPerformAction(action, withSender: sender)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let realOrigin = self.checkAnswersButton.convert(checkAnswersButton.bounds, to: self.view)
-            print("frame height = \(self.view.frame.height)")
-            print("screen Height = \(screenHeight)")
-            print("realOrigin bounds = \(realOrigin)")
-            print("keyBoardHeight = \(keyboardSize.height)")
-            let bottomSpace = screenHeight - realOrigin.maxY
-            let overlap = keyboardSize.height + 44 - bottomSpace
-            print("bottomSpace = \(bottomSpace)")
-            print("overlap = \(overlap)")
-            
-            if bottomSpace < keyboardSize.height + 44 {
-                print("too high")
-                let diff = overlap + 8
-                print("difference = \(diff)")
-                self.view.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height - diff)
-                //self.view.layoutMargins = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height + diff, 0.0)
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    public var screenHeight: CGFloat {
-        return UIScreen.main.bounds.height
-    }
-    @objc func keyboardWillHide(notification: NSNotification) {
-        
     }
 }
