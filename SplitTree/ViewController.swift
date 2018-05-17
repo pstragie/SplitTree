@@ -186,7 +186,7 @@ class ViewController: UIViewController {
     // MARK: - Functions
     // MARK: Setup layout
     func setupLayout() {
-        if !SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
+        if SplitTreeFull.store.isProductPurchased(SplitTreeFull.FullVersion) {
             unlockButton.isHidden = true
             for lockedButton in lockedButtons {
                 lockedButton.isEnabled = true
@@ -205,6 +205,10 @@ class ViewController: UIViewController {
         unlockButton.layer.cornerRadius = 10
         rekenbladButton.layer.borderWidth = 2
         rekenbladButton.layer.cornerRadius = 10
+        restorePurchaseButton.backgroundColor = UIColor.init(white: 0.5, alpha: 0.8)
+        restorePurchaseButton.layer.cornerRadius = 10
+        restorePurchaseButton.layer.masksToBounds = true
+
         for button in myButtons {
             button.layer.borderWidth = 2
             button.titleLabel?.minimumScaleFactor = 0.1
@@ -214,7 +218,7 @@ class ViewController: UIViewController {
         checkProgress()
         if twoAndThree() {
             rekenbladButton.isEnabled = true
-            rekenbladButton.backgroundColor = UIColor.init(white: 1, alpha: 1)
+            rekenbladButton.backgroundColor = UIColor.white
         } else {
             rekenbladButton.isEnabled = false
             rekenbladButton.backgroundColor = UIColor.init(white: 1, alpha: 0.8)

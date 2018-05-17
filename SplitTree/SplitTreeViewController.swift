@@ -174,6 +174,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
     // MARK: setup layout
     func setupLayout() {
 //        print("setupLayout")
+        
         self.score = 0
         self.numberArray = [0]
         for button in myButtons {
@@ -182,6 +183,7 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         }
         for textfield in myTextFields {
             textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+            //textfield.addTarget(self, action: #selector(uiMenuViewControllerDidShowMenu(_:)), for: .allTouchEvents)
             textfield.layer.borderColor = UIColor.black.cgColor
             textfield.layer.borderWidth = 1
             textfield.layer.cornerRadius = 5
@@ -249,12 +251,13 @@ class SplitTreeViewController: UIViewController, UITextFieldDelegate {
         self.right1.becomeFirstResponder()
     }
     
-    @objc func uiMenuViewControllerDidShowMenu() {
+    @objc func uiMenuViewControllerDidShowMenu(_ textfield: UITextField) {
         // textFieldShouldReturn not responding appropriate when using this!!!
 //        print("uiMenuViewControllerDidShowMenu")
         let menuController = UIMenuController.shared
         menuController.setMenuVisible(false, animated: false)
         menuController.update()
+        textfield.becomeFirstResponder()
     }
     
     // MARK: prepare numbers
