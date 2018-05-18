@@ -69,7 +69,7 @@
 "IUw-G8-GG0.text" = "labelTwo";
 
 /* Class = "UIButton"; normalTitle = "Check answers"; ObjectID = "IVp-Ya-rL7"; */
-"IVp-Ya-rL7.normalTitle" = "Controleer";
+"IVp-Ya-rL7.normalTitle" = "Controleren";
 
 /* Class = "UILabel"; text = "+"; ObjectID = "JNv-wM-ndo"; */
 "JNv-wM-ndo.text" = "+";

@@ -316,6 +316,7 @@ class ViewController: UIViewController {
         resetData()
         resetTimes()
         resetScores()
+        checkProgress()
         setupLayout()
         viewWillLayoutSubviews()
     }

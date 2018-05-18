@@ -39,6 +39,8 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var subSecondLabels: [UILabel]!
     @IBOutlet var mySubTextFields: [UITextField]!
     @IBOutlet weak var checkAnswersButton: UIButton!
+    @IBOutlet weak var subView: UIView!
+    @IBOutlet weak var subViewBottom: NSLayoutConstraint!
     
     @IBAction func clearButtonTapped(_ sender: UIButton) {
         for textField in myTextFields {
@@ -106,6 +108,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         let orientationvalue = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(orientationvalue, forKey: "orientation")
         AppDelegate.AppUtility.lockOrientation(.portrait)
@@ -116,12 +119,20 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         for mytextField in myTextFields {
             mytextField.delegate = self
         }
+        self.subView.translatesAutoresizingMaskIntoConstraints = false
         prepareNumbers()
         setupLayout()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -164,6 +175,7 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupLayout() {
+        
         viewLeft.layer.borderColor = UIColor.black.cgColor
         viewLeft.layer.borderWidth = 2
         viewLeft.layer.cornerRadius = 10
@@ -358,5 +370,16 @@ class RekenBladViewController: UIViewController, UITextFieldDelegate {
         }
         
         return super.canPerformAction(action, withSender: sender)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.subViewBottom.constant = keyboardSize.height + 4
+            self.subView.layoutIfNeeded()
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
     }
 }
